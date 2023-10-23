@@ -794,7 +794,6 @@ function ErroAjax(resposta, msg = '', fazerLogoff = 'n') {
     app.views.main.router.navigate('/' + resposta.navigate.toLowerCase() + '/');
   }
   if ((resposta == 'error') && (msg == 'conexao/servidor')) {
-  console.log(resposta);
     app.dialog.alert('Falha ao comunicar com o servidor. Verifique sua internet e tente novamente!', null);
   }
   else if (msg != '') { // Mensagem informada ou Ajax ERROR

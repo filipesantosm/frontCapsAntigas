@@ -180,8 +180,8 @@ jQuery(function () {
       var dataC = JSON.stringify(criptoDadosEnviado(dataC, ktmp));
       var dataD = JSON.stringify(dataD);
       app.request({
-        url: servidor + '/api_public/titulos/meus_titulosComboV2.php',
-        // url: servidor + '/api_public/titulos/meus_titulosComboRasp.php',
+        //url: servidor + '/api_public/titulos/meus_titulosComboV2.php',
+        url: servidor + '/api_public/titulos/meus_titulosComboRasp.php',
         beforeSend: function (request) {
           request.setRequestHeader("Authorization", "Bearer " + localStorage.getItem("jwt"));
           request.setRequestHeader("chaveapp", chaveAPP);
@@ -1380,7 +1380,7 @@ jQuery(function () {
 
   function escreverCardRaspadinha(titulo, cardid, vendasitensid, icone, nomesorteio, qtdrasp) {
 
-    var mensagem = 'Chegou a raspadinha<br>do SUPERCAP';
+    var mensagem = 'Chegou a raspadinha<br>do MARACAP';
     return '<div class="card" style="background-color: #dadada4a !important;">' +
       '<div class="row" style="padding-top: 8px;">' +
       '<div class="col-60" style="padding: 8px !important;text-align: center;">' +

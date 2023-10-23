@@ -49,18 +49,18 @@ let codigo_crip = "";
 let EFI_PayeeCode = "1e154ffe3333e28a4763edaadf9bb689"; // Codigo Gerencianet/EFI
 let EFI_Sandbox = true; // HOMOLOGAÇÂO = TRUE // PRODUCAO = FALSE
 
-var servidor = "https://ipa2.newmaracap.com.br";
+var servidor = "https://ipa2.newmaracap.com.br/";
 
-var emailSuporte = "atendimento@supercap.com.br";
-var NomeEmpresa = "SUPERCAP";
-var website = 'https://www.supercap.com.br/';
+var emailSuporte = "atendimento@maracap.com.br";
+var NomeEmpresa = "MARACAP";
+var website = 'https://www.maracap.com.br/';
 var chaveAPP = "Ch@ve67";
 var versao = "1.0.67";
-var appID = "br.com.supercap.novoapp";
+var appID = "br.com.maracap.novoapp";
 var versaoAPP = "APP-ver-" + versao; // repetir a versao em copyright_versaoAPP
 var copyright_versaoAPP = "Versão: " + versao; // Essa mostra no aplicativo tela Welcome e Login
-var copyright_desenvolvidoPor = "@supercapsp";
-var copyright_site = "https://supercapsp.com.br/";
+var copyright_desenvolvidoPor = "@oficialmaracap";
+var copyright_site = "https://maracap.com.br/";
 var pgtmp = ""; // n lembro p que serve
 var locUsu = "ok"// utilizada para saber o local do usuário conforme o IP
 var testeUsu = "00"// cpf utilizado identificar o usuário de teste
@@ -81,9 +81,9 @@ let textoDadoAppJS = "";// Armazena os dados do JSON em variável javascript par
 var habilitarPopupCapitalizadora = "s";
 // Variávels JS utilizadas em codigo JS
 // por ser assyncrono o comando getJSON nao foi possível carregar o valor pela funcao getDadoApp
-var nomeCapitalizadora = "KOVR";
-var dialogMsgContribuicao = "ATENÇÃO: Visite o site https://supercapsp.com.br/regulamentos/ e veja os procedimentos ali descritos.";
-var textoPopUpCapitalizadora = "A SUPERCAP atualizou sua política de uso e proteção de dados.<br><br>Li e estou de acordo. <a href='https://supercapsp.com.br/regulamentos/' </a>";
+var nomeCapitalizadora = "BRCAP";
+var dialogMsgContribuicao = "ATENÇÃO: Visite o site https://maracap.com.br/regulamentos/ e veja os procedimentos ali descritos.";
+var textoPopUpCapitalizadora = "A Maracap atualizou sua política de uso e proteção de dados.<br><br>Li e estou de acordo. <a href='https://maracap.com.br/regulamentos/' </a>";
 
 if (sessionStorage.getItem('id_indicacao')) {
   var id_indicacao = sessionStorage.getItem('id_indicacao');
