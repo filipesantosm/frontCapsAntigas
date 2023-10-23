@@ -1,0 +1,227 @@
+<!-- Initial Page, "data-name" contains page name -->
+<div data-name="informacoes" class="page">
+  <!-- Top Navbar -->
+  <div id="homeNav" class="navbar no-shadow">
+    <div class="navbar-bg">
+      <!-- transparent !important; -->
+      <img eda-src="dadosComum.statusbar" class="imgStatusBar" src="img/menu/statusbar.png">
+    </div>
+    <div class="navbar-inner sliding">
+      <div class="title-center titulo_principal" eda-text="dadosComum.titulo"></div>
+    </div>
+  </div><!-- FIM: Top Navbar -->
+
+  <!-- FAIXA OFFLINE -->
+  <div class="FaixaOffline" id="FaixaOffline" style="display: none;">Você está Sem internet..</div>
+
+  <!-- INICIO MENU TABS -->
+  <div id="infoNavTab" class="toolbar tabbar toolbar-bottom rodape-padrao">
+    <div class="toolbar-inner">
+      <a id="link1" href="/home/" class="tab-link">
+        <i class="icones-tab mdi mdi-home-currency-usd">
+          <span id="informacoes-badge-qtd-carrinho" class="badge badge-toolbar bg-badge-tab"></span>
+        </i>
+        <span eda-text="rodape.rodape1" class="icones-tab-label tabbar-label">COMPRAR</span>
+      </a>
+      <!-- Patrick Inicio Criado -->
+      <a id="link2" href="/resultadosanteriores/" class="tab-link">
+        <i class="icones-tab mdi mdi-wan"></i>
+        <span eda-text="rodape.rodape2" class="icones-tab-label tabbar-label">GANHADORES</span>
+      </a>
+      <!-- Patrick fim Criado -->
+      <a id="link4" href="/meustitulos/" class="tab-link">
+        <i class="icones-tab mdi mdi-ticket">
+          <span id="informacoes-badge-qtd-comprada" class="badge badge-toolbar bg-badge-tab"></span>
+        </i>
+        <span eda-text="rodape.rodape3" class="icones-tab-label tabbar-label">MEUS TÍTULOS</span>
+      </a>
+      <a id="link5" href="/informacoes/" class="tab-link tab-link-active">
+        <i class="icones-tab mdi mdi-view-grid-plus-outline"></i>
+        <span eda-text="rodape.rodape4" class="icones-tab-label tabbar-label">MAIS</span>
+      </a>
+
+    </div>
+  </div><!-- FIM: TAB BAR -->
+
+  <!-- Pagina do Aplicativo Scrollable pag-->
+  <div class="page-content ptr-content page-background">
+    <div class="card info-block" style="margin-top: 8px;padding-bottom: 0px !important;">
+      <div class="card" style="margin-right: 0px !important;margin-left: 0px !important;">
+        <div class="list" style="border-style: none;--f7-card-box-shadow:none">
+          <ul>
+            <li>
+              <a href="/extrato/" class="link" style="width: 95%;">
+                <div class="item-content" style="width: 100%;">
+                  <div class="item-media info-icone "><i class="mdi mdi-cash-usd-outline text-color-red"></i></div>
+                  <div class="item-inner" style="width: 100%;">
+                    <div class="item-title info-link">Extrato</div>
+                  </div>
+                </div>
+              </a>
+            </li>
+            <li id="li_ComprarSaldo">
+              <a href="/comprarsaldo/" class="link" style="width: 95%;">
+                <div class="item-content" style="width: 100%;">
+                  <div class="item-media info-icone "><i class="mdi mdi-barcode text-color-red"></i></div>
+                  <div class="item-inner" style="width: 100%;">
+                    <div class="item-title info-link">Comprar Saldo(Boleto)</div>
+                  </div>
+                </div>
+              </a>
+            </li>
+            <li>
+              <a href="/acompanharsorteio/" class="link" style="width: 95%;">
+                <div class="item-content" style="width: 100%;">
+                  <div class="item-media info-icone "><i class="mdi mdi-television-classic text-color-red"></i>
+                  </div>
+                  <div class="item-inner" style="width: 100%;">
+                    <div class="item-title info-link">Acompanhar Sorteio</div>
+                  </div>
+                </div>
+              </a>
+            </li>
+            <li>
+              <a href="/sorteios/" class="link" style="width: 95%;">
+                <div class="item-content" style="width: 100%;">
+                  <div class="item-media info-icone"><i class="mdi mdi-history text-color-red"></i></div>
+                  <div class="item-inner" style="width: 100%;">
+                    <div class="item-title info-link">Histórico de Sorteios</div>
+                    <div class="item-title"></div>
+                  </div>
+                </div>
+              </a>
+            </li>
+            <li>
+              <a href="/sorteioaovivo/" class="link" style="width: 95%;">
+                <div class="item-content" style="width: 100%;">
+                  <div class="item-media info-icone"><i class="mdi mdi-youtube-tv text-color-red"></i>
+                  </div>
+                  <div class="item-inner" style="width: 100%;">
+                    <div class="item-title info-link">Sorteio Ao Vivo</div>
+                    <div class="item-title"></div>
+                  </div>
+                </div>
+              </a>
+            </li>
+            <li>
+              <a href="/regulamento/" class="link" style="width: 95%;">
+                <div class="item-content" style="width: 100%;">
+                  <div class="item-media info-icone "><i class="mdi mdi-cursor-pointer text-color-red"></i></div>
+                  <div class="item-inner" style="width: 100%;">
+                    <div class="item-title info-link">Regulamento</div>
+                    <div class="item-after" style="display: none;"> <span class="badge"> + </span></div>
+                  </div>
+                </div>
+              </a>
+            </li>
+
+            <li id="li_CidadesAtendidas" eda-showHide="pages.informacoes.li_CidadesAtendidas">
+              <a href="/cidadesatendidas/" class="link" style="width: 95%;">
+                <div class="item-content" style="width: 100%;">
+                  <div class="item-media info-icone"><i class="mdi mdi-map-marker-check-outline text-color-red"></i>
+                  </div>
+                  <div class="item-inner" style="width: 100%;">
+                    <div class="item-title info-link">Cidades Atendidas</div>
+                    <div class="item-title"></div>
+                  </div>
+                </div>
+              </a>
+            </li>
+            <li>
+              <a href="/quemsomos/" class="link" style="width: 95%;">
+                <div class="item-content" style="width: 100%;">
+                  <div class="item-media info-icone"><i class="mdi mdi-home-search-outline text-color-red"></i>
+                  </div>
+                  <div class="item-inner" style="width: 100%;">
+                    <div class="item-title info-link">Quem Somos</div>
+                    <div class="item-title"></div>
+                  </div>
+                </div>
+              </a>
+            </li>
+            <li>
+              <a href="/comofunciona/" class="link" style="width: 95%;">
+                <div class="item-content" style="width: 100%;">
+                  <div class="item-media info-icone"><i class="mdi mdi-book-open-page-variant text-color-red"></i>
+                  </div>
+                  <div class="item-inner" style="width: 100%;">
+                    <div class="item-title info-link">Como Funciona</div>
+                    <div class="item-after" style="display: none;"> <span class="badge"> ? </span></div>
+                  </div>
+                </div>
+              </a>
+            </li>
+            <li id="li_instituicoesAtendidas" eda-showHide="pages.informacoes.li_instituicoesAtendidas">
+              <a href="/instituicoes/" class="link" style="width: 95%;">
+                <div class="item-content" style="width: 100%;">
+                  <div class="item-media info-icone"><i class="mdi mdi-hospital-building text-color-red"></i></div>
+                  <div class="item-inner" style="width: 100%;">
+                    <div class="item-title info-link">Instituições Assistidas</div>
+                  </div>
+                </div>
+              </a>
+            </li>
+            <li>
+              <a href="#" eda-href="dadosComum.linkPoliticaPrivacidade" id="infoPolPrivacidade" target="_blank"
+                class="link external" style="width: 95%;">
+                <div class="item-content" style="width: 100%;">
+                  <div class="item-media info-icone"><i class="mdi mdi-shield-lock-outline text-color-red"></i>
+                  </div>
+                  <div class="item-inner" style="width: 100%;">
+                    <div class="item-title info-link">Política de Privacidade</div>
+                  </div>
+                </div>
+              </a>
+            </li>
+            <li>
+              <a href="/perfil/" class="link" style="width: 95%;">
+                <div class="item-content" style="width: 100%;">
+                  <div class="item-media info-icone"><i class="mdi mdi-account-circle-outline text-color-red"></i>
+                  </div>
+                  <div class="item-inner" style="width: 100%;">
+                    <div class="item-title info-link">Meu Perfil</div>
+                  </div>
+                </div>
+              </a>
+            </li>
+            <li>
+              <a id='informacoes_suporteWA' class="link external" target="_blank" href="https://wa.me/xxxxx"
+                style="width: 95%;">
+                <div class="item-content" style="width: 100%;">
+                  <!-- <div class="item-media info-icone"><i class="mdi mdi-phone-classic text-color-red"></i></div> -->
+                  <div class="item-media info-icone"><i class="mdi mdi-whatsapp text-color-red"></i></div>
+                  <div class="item-inner" style="width: 100%;">
+                    <div class="item-title info-link">Contato</div>
+                  </div>
+                </div>
+              </a>
+            </li>
+            <li>
+              <a href="#" class="link" id="logout" style="width: 95%;">
+                <div class="item-content" style="width: 100%;">
+                  <div class="item-media info-icone"><i class="mdi mdi-logout text-color-red"></i></div>
+                  <div class="item-inner" style="width: 100%;">
+                    <div class="item-title info-link">Sair/Logout</div>
+                    <div class="item-title"></div>
+                  </div>
+                </div>
+              </a>
+            </li>
+
+            <!-- Patrick Inicio Criado -->
+            <li>
+              <a href="/importartitulo/" class="link" style="width: 95%;display: none;">
+                <div class="item-content" style="width: 100%;">
+                  <div class="item-media info-icone "><i class="mdi mdi-file-plus-outline text-color-red"></i></div>
+                  <div class="item-inner" style="width: 100%;">
+                    <div class="item-title info-link">Importar Título</div>
+                  </div>
+                </div>
+              </a>
+            </li>
+          </ul>
+        </div> <!-- FIM DIV LIST -->
+      </div> <!-- FIM card-perfilT -->
+    </div> <!-- FIM DIV BLOCK -->
+  </div><!-- FIM DIV PAGE CONTENT -->
+</div> <!-- FIM Page, "data-name" contains page name -->

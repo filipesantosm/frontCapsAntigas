@@ -1,0 +1,113 @@
+<!-- Initial Page, "data-name" contains page name -->
+<div data-name="cad_p2" class="page">
+  <!-- Scrollable page content -->
+  <div class="page-content page-cadastro">
+    <center>
+      <h2 style="color:#ffffff;margin-bottom: 8px;">Cadastrar Endereço</h2>
+      <h3 style="color:#ffffff;margin-bottom: 4px;margin-top: 4px;">Preencha as informações abaixo:</h3>
+    </center>
+
+    <div id="CadastroComInternet">
+      <!--class="div-formulario-cadastro"  -->
+      <div class="list inset list-cadastro">
+        <ul class="ui-form-cadastro form-cadastro">
+          <li class="item-content item-input">
+            <div class="item-inner">
+              <div class="item-title item-label campo_formulario">
+                <span>CEP</span><span class="campo-obrigatorio"> *</span>
+              </div>
+              <div class="item-input-wrap">
+                <input type="tel" id="CadCEPCadastro" maxlength="10" name="CEP" placeholder="xx.xxx-xxx"
+                  autocomplete="postal-code">
+              </div>
+            </div>
+          </li>
+          <li class="item-content item-input">
+            <div class="item-inner">
+              <div class="item-title item-label campo_formulario">
+                <span>Endereço (Rua/Avenida...)</span><span class="campo-obrigatorio"> *</span>
+              </div>
+              <div class="item-input-wrap">
+                <input type="text" id="CadLogradouro" maxlength="100" name="nomeLogradouro" readonly="readonly">
+              </div>
+            </div>
+          </li>
+          <li class="item-content item-input">
+            <div class="item-inner">
+              <div class="item-title item-label campo_formulario">
+                <span>Número</span><span class="campo-obrigatorio"> *</span>
+              </div>
+              <div class="item-input-wrap">
+                <input id="CadNumero" type="text" name="Numero" placeholder="Número" maxlength="50"
+                  autocomplete="address-line2">
+              </div>
+            </div>
+            <div class="item-inner">
+              <div class="item-title item-label campo_formulario">Complemento</div>
+              <div class="item-input-wrap">
+                <input type="text" id="CadComplemento" maxlength="100" name="Complemento" placeholder="Complemento"
+                  autocomplete="address-line3">
+              </div>
+            </div>
+          </li>
+          <li class="item-content item-input">
+            <div class="item-inner">
+              <div class="item-title item-label campo_formulario">
+                <span>Bairro</span><span class="campo-obrigatorio"> *</span>
+              </div>
+              <div class="item-input-wrap">
+                <input type="text" id="CadBairro" maxlength="100" name="nomeBairro">
+              </div>
+            </div>
+            <div class="item-inner">
+              <div class="item-title item-label campo_formulario">
+                <span>Cidade</span><span class="campo-obrigatorio"> *</span>
+              </div>
+              <div class="item-input-wrap">
+                <input type="text" id="CadCidade" maxlength="100" name="nomeCidade" readonly="readonly">
+              </div>
+            </div>
+          </li>
+          <li class="item-content item-input">
+            <div class="item-inner">
+              <div class="item-title item-label campo_formulario">
+                <span>UF</span><span class="campo-obrigatorio"> *</span>
+              </div>
+              <div class="item-input-wrap">
+                <input type="text" id="CadUF" maxlength="100" name="UF" readonly="readonly">
+              </div>
+            </div>
+            <div class="item-inner">
+              <div class="item-title item-label campo_formulario">
+                <span>País</span><span class="campo-obrigatorio"> *</span>
+              </div>
+              <div class="item-input-wrap">
+                <input type="text" id="CadPais" maxlength="100" name="País" readonly="readonly">
+              </div>
+            </div>
+          </li>
+          <div style="height: 35px;">
+            <span class="campo-obrigatorio"
+              style="font-size: 0.8em; padding-left: calc(var(--f7-list-item-padding-horizontal) + var(--f7-safe-area-left));">
+              * Campos obrigatórios</span>
+          </div>
+        </ul>
+      </div>
+      <div class="row"></div>
+      <p class="block row" style="padding: 16px 0px 10px 0px !important;font-weight: bold;">
+        <button id="CadcadastraP2"
+          class="col button button-card button-big button-fill button-round botao_cor_2 pulse_infinite">
+          Avançar
+        </button>
+      </p>
+      <p>
+        <center><a id='cadastro_suporteP1' class="link external" target="_blank"
+            href="https://wa.me/XXXXXX/?text=Ol%c3%a1!+Estou+com+dificuldades+para+efetuar+cadastro+na+tela+P1.+Poderia+me+ajudar%3f"
+            style="color:#ffffff;">Se estiver com dificuldades, clique aqui &nbsp<i
+              class="mdi mdi-whatsapp text-color-white"></i></a>
+        </center>
+      </p>
+    </div>
+    </br>
+  </div>
+</div>

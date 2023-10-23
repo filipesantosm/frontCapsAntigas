@@ -1,0 +1,39 @@
+  .gerencianetpix-label {
+    width: calc(100% - 40px);
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: row;
+  }
+
+  .gerencianetpix-loader {
+    margin: 20px 0;
+    border: 16px solid #f3f3f3;
+    border-top: 16px solid #3498db;
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    animation: gerecianetpix-spin 2s linear infinite;
+  }
+
+  @keyframes gerecianetpix-spin {
+    0% {
+      transform: rotate(0);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
+  .gerencianetpix-label>input {
+    padding: 0 10px!important;
+    border-radius: 6px 0 0 6px;
+    border: 2px solid #23458b;
+  }
+
+  .gerencianetpix-label>button {
+    background: #23458b;
+    width: 56px;
+    border: none;
+    border-radius: 0px 6px 6px 0;
+    outline: none;
+  }

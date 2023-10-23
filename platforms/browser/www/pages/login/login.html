@@ -1,0 +1,211 @@
+<!-- Initial Page, "data-name" contains page name -->
+<div data-name="login" class="page">
+  <!-- Scrollable page content -->
+  <div class="page-content page-cadastro">
+    <img eda-src="pages.login.brasao" id="pages.login.brasao" src="img/login/logo_brasao.png" style="position: absolute; z-index: 5; width: 35%; right: 0px; top: 141px;">
+    <div class="row" style="margin-top:0px;margin-bottom:0px;justify-content: center;">
+      <img eda-src="pages.login.mascote" id="pages.login.mascote" src="img/login/mascote.png" style="max-width:62%; margin-top:0px;margin-bottom:0px;">
+    </div>
+
+    <div class="block block-strong inset div-formulario-login">
+
+      <div class="card-content card-content-padding" style="padding-top: 4px;padding-bottom: 4px">
+        <div class="list inset list-cadastro">
+          <form id="form_login">
+            <div id="login">
+              <ul class="ui-form-cadastro">
+
+                <li class="item-content item-input"
+                  style="padding-left: 0px !important; padding-right: 0px;justify-content: center;">
+                  <div class="block-title titulo-card-login">C.P.F.:</div>
+                </li>
+
+                <li style="text-align: -webkit-center;text-align: -moz-center;">
+                  <div class="dialog-input-field item-input item-input-with-value" style="place-content: center;border-bottom: none !important;">
+                    <input id="logincpf" type="tel" placeholder="000.000.000-00" autocomplete="cpf" class="senhaCap"
+                      style="text-align: center;font-weight: bold; font-size: 1.3em !important;">
+                  </div>
+                </li>
+                <li class="item-content item-input"
+                  style="padding-left: 0px !important; padding-right: 0px;justify-content: center;">
+                  <div class="block-title titulo-card-login">Informe sua senha:</div>
+                </li>
+                <!-- SE device platform = webapp-->
+                <li id="li_pass_web" style="text-align: -webkit-center; text-align: -moz-center; display: none;">
+                  <div class="dialog-input-field item-input item-input-with-value" style="place-content: center;">
+                    <div class="item-input-wrap">
+                      <input id="novoPinCodeLogin_web" class="senhaCap dialog-input dialog-input-font input-with-value"
+                      style="border-bottom: none !important;"
+                        type="password" pattern="[0-9]*" maxlength="6" autocomplete="off" placeholder="* * * * * *">
+                      <div class="password-icone">
+                        <i style="font-size: 25px !important; float: right;" id="pass_show_web"
+                          class="mdi mdi-eye-check-outline color-azul"></i>
+                        <i style="font-size: 25px !important; float: right;display: none;" id="pass_hide_web"
+                          class="mdi mdi-eye-off-outline color-azul"></i>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+                <li id="li_pass_app" style="text-align: -webkit-center; text-align: -moz-center;">
+                  <div class="dialog-input-field item-input item-input-with-value" style="place-content: center;">
+                    <div class="item-input-wrap">
+                      <input id="novoPinCodeLogin_app" style="border-bottom: none !important;"
+                        class="password-mascara senhaCap dialog-input dialog-input-font input-with-value" type="tel"
+                        maxlength="6" autocomplete="off" placeholder="* * * * * *">
+                      <div class="password-icone">
+                        <i style="font-size: 26px !important; float: right;" id="pass_show_app"
+                          class="mdi mdi-eye-check-outline color-azul"></i>
+                        <i style="font-size: 26px !important; float: right;display: none;" id="pass_hide_app"
+                          class="mdi mdi-eye-off-outline color-azul"></i>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+                <li style="text-align: center; margin-top: 12px;">
+                  <span style="color: #ff0000;">Senha numérica de 6 dígitos</span>
+                </li>
+              </ul>
+              <div class="block row" style="margin-top: 2px;margin-bottom: 2px;padding-top: 10px;">
+                <button id="Fazerlogin"
+                  class="col button button-card button-raised button-round botao_cor_1 pulse_infinite">Avançar</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="row" style="justify-content: center; margin-top: 10px;">
+      <p>
+        <button id="esqueceuSenha" style="color:#ffffff;  border-color: #ffffff; width: 280px;"
+          class="col button button-card button-raised button-round botao_cor_3">Esqueceu sua
+          senha?</button>
+      </p>
+    </div>
+
+    <div class="row" style="justify-content: center; margin-top: 10px;">
+      <p>
+        <button id="AlterarCPF" style="color:#ffffff;  border-color: #ffffff; width: 280px;"
+          class="col button button-card button-raised button-round botao_cor_2">ENTRAR COM OUTRO CPF
+        </button>
+      </p>
+    </div>
+    <div class="row" style="padding-top: 8px;">
+      <p>
+        <center><a id='login_suporteWA' class="link external" target="_blank"
+            href="https://wa.me/XXXXXX/?text=Ola%2c+preciso+de+ajuda+para+efetuar+login" style="color:#ffffff;">Se
+            estiver com dificuldades, clique aqui &nbsp<i class="mdi mdi-whatsapp text-color-white"></i></a>
+        </center>
+      </p>
+    </div>
+    <!-- popup para informar os dados para recuperação de senha -->
+    <div class="popup popup-RecuperarSenha popup-recuperar-senha">
+      <div class="block" style="margin-top: 16px;">
+        <div class="block-title titulo-card-login">Informe seus dados</div>
+        <!-- Close Popup -->
+        <i class="mdi mdi-close-circle color-vermelho popup-recuperar-senha-btn-fechar link popup-close"></i>
+        <div class="list inline-labels no-hairlines-md" style="margin-top: 2px; margin-bottom: 2px;">
+          <ul>
+            <li class="item-content item-input" id="li-RecSenhaCPFCadastro">
+              <div class="item-inner">
+                <div class="item-title item-label" style="width: 100px;"><span class="itemPopUpBottom">C.P.F.: </span>
+                </div>
+                <div class="item-input-wrap">
+                  <input type="text" id="RecSenhaCPFCadastro" name="RecSenhaCPFCadastro" placeholder="000-000-000-00">
+                  <!--<span class="input-clear-button"></span>-->
+                </div>
+              </div>
+            </li>
+            <li class="item-content item-input" id="li-RecSenhaEmailCadastro">
+              <div class="item-inner">
+                <div class="item-title item-label" style="width: 100px;"><span class="itemPopUpBottom">Email: </span>
+                </div>
+                <div class="item-input-wrap">
+                  <input type="email" id="RecSenhaEmailCadastro" name="RecSenhaEmailCadastro"
+                    placeholder="Email Cadastrado" autocomplete="email">
+                  <!--<span class="input-clear-button"></span>-->
+                </div>
+              </div>
+            </li>
+            <li class="item-content item-input" id="li-RecSenhaTelefoneCadastro">
+              <div class="item-inner">
+                <div class="item-title item-label" style="width: 100px;"><span class="itemPopUpBottom">Telefone: </span>
+                </div>
+                <div class="item-input-wrap">
+                  <input type="tel" id="RecSenhaTelefoneCadastro" maxlength="10" name="Telefone"
+                    placeholder="(xx) xxxxx-xxxx" autocomplete="tel">
+                  <span class="input-clear-button"></span>
+                </div>
+              </div>
+            </li>
+          </ul>
+          <div style="  padding-top: 14px; padding-bottom: 14px;">
+            <button id="bt-EnviarSenhaSMS"
+              class="col button button-card button-fill button-round bold botao_cor_1">Enviar código por
+              SMS</button>
+            <button id="bt-EnviarSenhaEMAIL"
+              class="col button button-card button-fill button-round bold botao_cor_1">Enviar código por
+              EMAIL</button>
+            <button id="bt-RestarSenha"
+              class="col button button-card button-fill button-round bold botao_cor_1">Verificar Dados</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- popup para validação de senha recebida pelo Esqueci a senha -->
+    <div class="popup popup-ValidaSenha popup-recuperar-senha">
+      <div class="block" style="margin-top: 16px;">
+        <div class="block-title titulo-card-login">Informe o código recebido<br>por SMS ou EMAIL</div>
+        <!-- Close Popup -->
+        <i class="mdi mdi-close-circle color-vermelho popup-recuperar-senha-btn-fechar link popup-close"></i>
+        <div class="list inline-labels no-hairlines-md" style="margin-top: 2px; margin-bottom: 2px;">
+          <ul>
+            <li class="item-content item-input" id="li-codigoRecebido">
+              <div class="item-inner">
+                <div class="item-title item-label">Código: </div>
+                <div class="item-input-wrap">
+                  <input type="text" id="codigoRecebido" name="codigoRecebido" placeholder="XX-XX-XX-XX"
+                    style="text-transform: uppercase;">
+                  <span class="input-clear-button"></span>
+                </div>
+              </div>
+            </li>
+          </ul>
+          <div>
+            <button id="bt-ValidaSenha"
+              class="col button button-card button-raised button-round botao_cor_1 pulse_infinite">Validar
+              código
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- popup para cadastrar nova senha -->
+    <div class="popup popup-novaSenha popup-recuperar-senha">
+      <div class="block" style="margin-top: 16px;padding: 0px!important;">
+        <div class="block-title titulo-card-login" style="font-weight: bold !important;">Dados encontrados!<br>Cadastre
+          sua nova senha:</div>
+        <!-- Close Popup -->
+        <i class="mdi mdi-close-circle color-vermelho popup-recuperar-senha-btn-fechar link popup-close"></i>
+        <div class="list inline-labels no-hairlines-md" style="margin-top: 2px; margin-bottom: 2px;">
+          <ul>
+            <li class="" id="li-novaSenha" style="margin: 0px 0px 10px 0px;">
+              <div class="row" style="justify-content: center;margin: 10px;">
+                <div class="col-80" style="text-align: end;">
+                  <input class='senhaCap' type="tel" id="novaSenha" name="novaSenha" placeholder="* * * * * *"
+                    autocomplete="off" style="border-bottom: none !important;">
+                  <span class="input-clear-button" style="right: 10px;"></span>
+                </div>
+              </div>
+            </li>
+            <li class="item-content item-input" id="li-novaSenhaBtn" style="padding: 10px;">
+              <button id="bt-cadastraNovaSenha"
+                class="col button button-card button-fill button-round bold botao_cor_1">CRIAR NOVA SENHA</button>
+            </li>
+          </ul>
+
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>

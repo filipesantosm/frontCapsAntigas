@@ -1,0 +1,1275 @@
+<!-- Initial Page, "data-name" contains page name ESSE-->
+<div data-name="meustitulos" class="page">
+  <!-- Top Navbar -->
+  <div id="homeNav" class="navbar no-shadow">
+    <div class="navbar-bg">
+      <!-- transparent !important; -->
+      <img eda-src="dadosComum.statusbar" class="imgStatusBar" src="img/menu/statusbar.png">
+    </div>
+    <div class="navbar-inner sliding">
+      <div class="title-center titulo_principal" eda-text="dadosComum.titulo"></div>
+    </div>
+  </div><!-- FIM: Top Navbar -->
+
+  <div class="FaixaOffline" id="FaixaOffline" style="display: none;">Você está Sem internet..</div>
+
+  <!-- INICIO MENU TABS -->
+  <div id="meusTNavTab" class="toolbar tabbar toolbar-bottom rodape-padrao">
+    <div class="toolbar-inner">
+      <a id="link1" href="/home/" class="tab-link">
+        <i class="icones-tab mdi mdi-home-currency-usd">
+          <span id="meust-badge-qtd-carrinho" class="badge badge-toolbar bg-badge-tab"></span>
+        </i>
+        <span eda-text="rodape.rodape1" class="icones-tab-label tabbar-label">COMPRAR</span>
+      </a>
+      <a id="link2" href="/resultadosanteriores/" class="tab-link">
+        <i class="icones-tab mdi mdi-wan"></i>
+        <span eda-text="rodape.rodape2" class="icones-tab-label tabbar-label">GANHADORES</span>
+      </a>
+      <a id="link4" href="/meustitulos/" class="tab-link tab-link-active">
+        <i class="icones-tab mdi mdi-ticket">
+          <span id="meust-badge-qtd-comprada" class="badge badge-toolbar bg-badge-tab-active"></span>
+        </i>
+        <span eda-text="rodape.rodape3" class="icones-tab-label tabbar-label">MEUS TÍTULOS</span>
+      </a>
+      <a id="link5" href="/informacoes/" class="tab-link">
+        <i class="icones-tab mdi mdi-view-grid-plus-outline"></i>
+        <span eda-text="rodape.rodape4" class="icones-tab-label tabbar-label">MAIS</span>
+      </a>
+    </div>
+  </div><!-- FIM: TAB BAR -->
+
+  <!-- Pagina do Aplicativo Scrollable pag-->
+  <div class="page-content ptr-content page-background">
+    <!-- INICIO CARD SELECAO DE DATA -->
+    <div id="selecaoDataHistorico" class="card info-block" style="margin-top: 8px !important;">
+      <div class="block-title titulo-card-pagamento" style="padding-bottom: 0px !important;">
+        Quer conferir o sorteio?<br>Selecione a data
+      </div>
+      <div class="card"
+        style="margin-right: 0px !important; margin-left: 0px !important; padding-bottom: 0px !important; margin-bottom: -8px !important;">
+        <div class="list" style="border-style: none;--f7-card-box-shadow:none">
+          <ul>
+            <li>
+              <div class="item-content item-input" style="padding-right: 0px; padding-left: 0px;height: 0px;">
+                <div class="item-inner" style="padding-right: 0px;padding-bottom: 0px;padding-top: 0px;">
+                  <div class="item-input-wrap">
+                    <input type="text" placeholder="CLIQUE AQUI:" readonly="readonly" id="selecionar_data_historico"
+                      class="input-with-value" style="text-align: center;" />
+                  </div>
+                </div>
+              </div>
+              <input type="hidden" id="hidden-guid-sorteioSelecionado_sorteios" value="">
+              <input type="hidden" id="hidden-guid-sorteioSelecionado_sorteios_semanal" value="">
+              <input type="hidden" id="hidden-guid-sorteioSelecionado_sorteios_extra" value="">
+            </li>
+          </ul>
+        </div> <!-- FIM list -->
+      </div> <!-- FIM CARD -->
+    </div><!-- FIM CARD SELECAO DE DATA -->
+
+    <!-- Card Produto-->
+    <!-- CONFERIR SORTEIO -->
+    <div id="MT_produtos" class="card block-strong inset block-pg-metodo" style="display: none;">
+      <div class="block-title titulo-card-pagamento" style="padding-bottom: 0px !important;">
+        Selecione o Produto<br>que deseja conferir
+      </div>
+      <div class="list"
+        style="padding-top: 0px; padding-bottom: 0px; margin:0; width: 100% !important;justify-content: center;font-size: 0.8rem;">
+        <p style="display: flex; margin: 8px; justify-content: center;">
+          <button id="MT_sorteios" value="" name="MT_sel_produto" style="display: none;"
+            class="button button-round button-outline valor-boleto btn_mt_produtos segmentoMultiProduto">
+            <span class="botoes-pagamento">Produto 1</span>
+          </button>
+
+          <button id="MT_sorteios_semanal" value="" name="MT_sel_produto" style="display: none;"
+            class="button button-round button-outline valor-boleto btn_mt_produtos segmentoMultiProduto">
+            <span class="botoes-pagamento">Produto 2</span>
+          </button>
+
+          <button id="MT_sorteios_extra" value="" name="MT_sel_produto" style="display: none;"
+            class="button button-round button-outline valor-boleto btn_mt_produtos segmentoMultiProduto">
+            <span class="botoes-pagamento">Produto 3</span>
+
+          </button>
+        </p>
+      </div>
+
+    </div>
+
+    <!-- CARD CONFERIR SORTEIOS -->
+    <div id="conferir_sorteios" class="card info-block" style="margin-top: 8px !important; display: none;">
+      <div class="block-title titulo-card-pagamento">
+        Selecione o Prêmio<br>que deseja conferir
+      </div>
+      <div class="selectConferirSorteio">
+        <div id="conferirItem_sorteios" name="conferirItem"
+          style="margin-right: 0px !important; margin-left: 0px !important; padding-bottom: 0px !important; margin-bottom: -8px !important;">
+          <div class="list" style="border-style: none;--f7-card-box-shadow:none">
+            <ul>
+              <li>
+                <div class="item-content item-input" style="padding-right: 0px; padding-left: 0px;height: 0px;">
+                  <div class="item-inner" style="padding-right: 0px;padding-bottom: 0px;padding-top: 0px;">
+                    <div class="item-input-wrap">
+                      <input type="text" placeholder="CLIQUE AQUI:" readonly="readonly" id="selecionarPremio_sorteios"
+                        class="input-with-value" style="text-align: center;" />
+                    </div>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </div> <!-- FIM list -->
+        </div>
+
+        <!-- accordion Numeros Sorteados -->
+        <div id="numerosSorteados_sorteios" class="list accordion-list" style="display: none;">
+          <ul>
+            <li class="accordion-item accordion-item-opened" style="margin: 4px;padding: 2px;">
+              <a href="#" class="item-content item-link">
+                <div class="item-inner" style="padding-top: 0px; padding-bottom: 0px; padding-right: 0px; background: #ffffff;
+                          margin-right: 4px;">
+                  <div class="item-title card-itens-pg">Números Sorteados</div>
+                </div>
+              </a>
+              <div class="accordion-item-content" style="padding-left: 6px;padding-right: 6px;margin-bottom: 0px;">
+
+                <div id='s-resultado-b01' name='bolas-resultado' class="circulo-apagado">01</div>
+                <div id='s-resultado-b02' name='bolas-resultado' class="circulo-apagado">02</div>
+                <div id='s-resultado-b03' name='bolas-resultado' class="circulo-apagado">03</div>
+                <div id='s-resultado-b04' name='bolas-resultado' class="circulo-apagado">04</div>
+                <div id='s-resultado-b05' name='bolas-resultado' class="circulo-apagado">05</div>
+                <div id='s-resultado-b06' name='bolas-resultado' class="circulo-apagado">06</div>
+                <div id='s-resultado-b07' name='bolas-resultado' class="circulo-apagado">07</div>
+                <div id='s-resultado-b08' name='bolas-resultado' class="circulo-apagado">08</div>
+                <div id='s-resultado-b09' name='bolas-resultado' class="circulo-apagado">09</div>
+                <div id='s-resultado-b10' name='bolas-resultado' class="circulo-apagado">10</div>
+                <div id='s-resultado-b11' name='bolas-resultado' class="circulo-apagado">11</div>
+                <div id='s-resultado-b12' name='bolas-resultado' class="circulo-apagado">12</div>
+                <div id='s-resultado-b13' name='bolas-resultado' class="circulo-apagado">13</div>
+                <div id='s-resultado-b14' name='bolas-resultado' class="circulo-apagado">14</div>
+                <div id='s-resultado-b15' name='bolas-resultado' class="circulo-apagado">15</div>
+
+                <div id='s-resultado-b16' name='bolas-resultado' class="circulo-apagado">16</div>
+                <div id='s-resultado-b17' name='bolas-resultado' class="circulo-apagado">17</div>
+                <div id='s-resultado-b18' name='bolas-resultado' class="circulo-apagado">18</div>
+                <div id='s-resultado-b19' name='bolas-resultado' class="circulo-apagado">19</div>
+                <div id='s-resultado-b20' name='bolas-resultado' class="circulo-apagado">20</div>
+                <div id='s-resultado-b21' name='bolas-resultado' class="circulo-apagado">21</div>
+                <div id='s-resultado-b22' name='bolas-resultado' class="circulo-apagado">22</div>
+                <div id='s-resultado-b23' name='bolas-resultado' class="circulo-apagado">23</div>
+                <div id='s-resultado-b24' name='bolas-resultado' class="circulo-apagado">24</div>
+                <div id='s-resultado-b25' name='bolas-resultado' class="circulo-apagado">25</div>
+                <div id='s-resultado-b26' name='bolas-resultado' class="circulo-apagado">26</div>
+                <div id='s-resultado-b27' name='bolas-resultado' class="circulo-apagado">27</div>
+                <div id='s-resultado-b28' name='bolas-resultado' class="circulo-apagado">28</div>
+                <div id='s-resultado-b29' name='bolas-resultado' class="circulo-apagado">29</div>
+                <div id='s-resultado-b30' name='bolas-resultado' class="circulo-apagado">30</div>
+
+                <div id='s-resultado-b31' name='bolas-resultado' class="circulo-apagado">31</div>
+                <div id='s-resultado-b32' name='bolas-resultado' class="circulo-apagado">32</div>
+                <div id='s-resultado-b33' name='bolas-resultado' class="circulo-apagado">33</div>
+                <div id='s-resultado-b34' name='bolas-resultado' class="circulo-apagado">34</div>
+                <div id='s-resultado-b35' name='bolas-resultado' class="circulo-apagado">35</div>
+                <div id='s-resultado-b36' name='bolas-resultado' class="circulo-apagado">36</div>
+                <div id='s-resultado-b37' name='bolas-resultado' class="circulo-apagado">37</div>
+                <div id='s-resultado-b38' name='bolas-resultado' class="circulo-apagado">38</div>
+                <div id='s-resultado-b39' name='bolas-resultado' class="circulo-apagado">39</div>
+                <div id='s-resultado-b40' name='bolas-resultado' class="circulo-apagado">40</div>
+                <div id='s-resultado-b41' name='bolas-resultado' class="circulo-apagado">41</div>
+                <div id='s-resultado-b42' name='bolas-resultado' class="circulo-apagado">42</div>
+                <div id='s-resultado-b43' name='bolas-resultado' class="circulo-apagado">43</div>
+                <div id='s-resultado-b44' name='bolas-resultado' class="circulo-apagado">44</div>
+                <div id='s-resultado-b45' name='bolas-resultado' class="circulo-apagado">45</div>
+
+                <div id='s-resultado-b46' name='bolas-resultado' class="circulo-apagado">46</div>
+                <div id='s-resultado-b47' name='bolas-resultado' class="circulo-apagado">47</div>
+                <div id='s-resultado-b48' name='bolas-resultado' class="circulo-apagado">48</div>
+                <div id='s-resultado-b49' name='bolas-resultado' class="circulo-apagado">49</div>
+                <div id='s-resultado-b50' name='bolas-resultado' class="circulo-apagado">50</div>
+                <div id='s-resultado-b51' name='bolas-resultado' class="circulo-apagado">51</div>
+                <div id='s-resultado-b52' name='bolas-resultado' class="circulo-apagado">52</div>
+                <div id='s-resultado-b53' name='bolas-resultado' class="circulo-apagado">53</div>
+                <div id='s-resultado-b54' name='bolas-resultado' class="circulo-apagado">54</div>
+                <div id='s-resultado-b55' name='bolas-resultado' class="circulo-apagado">55</div>
+                <div id='s-resultado-b56' name='bolas-resultado' class="circulo-apagado">56</div>
+                <div id='s-resultado-b57' name='bolas-resultado' class="circulo-apagado">57</div>
+                <div id='s-resultado-b58' name='bolas-resultado' class="circulo-apagado">58</div>
+                <div id='s-resultado-b59' name='bolas-resultado' class="circulo-apagado">59</div>
+                <div id='s-resultado-b60' name='bolas-resultado' class="circulo-apagado">60</div>
+
+                <div class="row" style="padding-top: 8px;padding-bottom: 8px;justify-content: center;width: 100%;">
+                  <div name='legenda' class="circulo-preferido"></div>
+                  <span
+                    style="font-size: 0.8em;color: #23458b !important;font-weight: bold !important;  margin-top: 4px; margin-left: 4px;">
+                    Bolas Sorteadas
+                  </span>
+                </div>
+
+              </div>
+            </li>
+          </ul>
+        </div><!-- FIM accordion -->
+
+        <!-- accordion títulos Sorteados -->
+        <div id="titulosSorteados_sorteios" class="list accordion-list" style="display: none;">
+          <ul>
+            <li class="accordion-item accordion-item-opened" style="margin: 4px;padding: 2px;">
+              <a href="#" class="item-content item-link">
+                <div class="item-inner" style="padding-top: 0px; padding-bottom: 0px; padding-right: 0px; background: #ffffff;
+                          margin-right: 4px;">
+                  <div class="item-title card-itens-pg">Títulos Sorteados</div>
+                </div>
+              </a>
+              <div class="accordion-item-content" style="padding-left: 16px;padding-right: 16px;margin-bottom: 10px;">
+                <div class="block" style="padding-left: 0px;padding-right: 0px">
+                  <div class="row no-gap">
+                    <div id='s-resultado-t1' name='titulo-resultado' class="col col-grid-carrinho"
+                      style="display: none;">
+                    </div>
+                    <div id='s-resultado-t2' name='titulo-resultado' class="col col-grid-carrinho"
+                      style="display: none;">
+                    </div>
+                    <div id='s-resultado-t3' name='titulo-resultado' class="col col-grid-carrinho"
+                      style="display: none;">
+                    </div>
+                  </div>
+                  <div class="row no-gap">
+                    <div id='s-resultado-t4' name='titulo-resultado' class="col col-grid-carrinho"
+                      style="display: none;">
+                    </div>
+                    <div id='s-resultado-t5' name='titulo-resultado' class="col col-grid-carrinho"
+                      style="display: none;">
+                    </div>
+                    <div id='s-resultado-t6' name='titulo-resultado' class="col col-grid-carrinho"
+                      style="display: none;">
+                    </div>
+                  </div>
+                  <div class="row no-gap">
+                    <div id='s-resultado-t7' name='titulo-resultado' class="col col-grid-carrinho"
+                      style="display: none;">
+                    </div>
+                    <div id='s-resultado-t8' name='titulo-resultado' class="col col-grid-carrinho"
+                      style="display: none;">
+                    </div>
+                    <div id='s-resultado-t9' name='titulo-resultado' class="col col-grid-carrinho"
+                      style="display: none;">
+                    </div>
+                  </div>
+
+                  <div class="row no-gap">
+                    <div id='s-resultado-t10' name='titulo-resultado' class="col col-grid-carrinho"
+                      style="display: none;">
+                    </div>
+                    <div id='s-resultado-t11' name='titulo-resultado' class="col col-grid-carrinho"
+                      style="display: none;">
+                    </div>
+                    <div id='s-resultado-t12' name='titulo-resultado' class="col col-grid-carrinho"
+                      style="display: none;">
+                    </div>
+                  </div>
+                  <div class="row no-gap">
+                    <div id='s-resultado-t13' name='titulo-resultado' class="col col-grid-carrinho"
+                      style="display: none;">
+                    </div>
+                    <div id='s-resultado-t14' name='titulo-resultado' class="col col-grid-carrinho"
+                      style="display: none;">
+                    </div>
+                    <div id='s-resultado-t15' name='titulo-resultado' class="col col-grid-carrinho"
+                      style="display: none;">
+                    </div>
+
+                  </div>
+                  <div class="row no-gap">
+                    <div id='s-resultado-t16' name='titulo-resultado' class="col col-grid-carrinho"
+                      style="display: none;">
+                    </div>
+                    <div id='s-resultado-t17' name='titulo-resultado' class="col col-grid-carrinho"
+                      style="display: none;">
+                    </div>
+                    <div id='s-resultado-t18' name='titulo-resultado' class="col col-grid-carrinho"
+                      style="display: none;">
+                    </div>
+
+                  </div>
+                  <div class="row no-gap">
+                    <div id='s-resultado-t19' name='titulo-resultado' class="col col-grid-carrinho"
+                      style="display: none;">
+                    </div>
+                    <div id='s-resultado-t20' name='titulo-resultado' class="col col-grid-carrinho"
+                      style="display: none;">
+                    </div>
+                    <div id='s-resultado-t21' name='titulo-resultado' class="col col-grid-carrinho"
+                      style="display: none;">
+                    </div>
+                  </div>
+                  <div class="row no-gap">
+                    <div id='s-resultado-t22' name='titulo-resultado' class="col col-grid-carrinho"
+                      style="display: none;">
+                    </div>
+                    <div id='s-resultado-t23' name='titulo-resultado' class="col col-grid-carrinho"
+                      style="display: none;">
+                    </div>
+                    <div id='s-resultado-t24' name='titulo-resultado' class="col col-grid-carrinho"
+                      style="display: none;">
+                    </div>
+
+                  </div>
+                  <div class="row no-gap">
+                    <div id='s-resultado-t25' name='titulo-resultado' class="col col-grid-carrinho"
+                      style="display: none;">
+                    </div>
+                    <div id='s-resultado-t26' name='titulo-resultado' class="col col-grid-carrinho"
+                      style="display: none;">
+                    </div>
+                    <div id='s-resultado-t27' name='titulo-resultado' class="col col-grid-carrinho"
+                      style="display: none;">
+                    </div>
+
+                  </div>
+                  <div class="row no-gap">
+                    <div id='s-resultado-t28' name='titulo-resultado' class="col col-grid-carrinho"
+                      style="display: none;">
+                    </div>
+                    <div id='s-resultado-t29' name='titulo-resultado' class="col col-grid-carrinho"
+                      style="display: none;">
+                    </div>
+                    <div id='s-resultado-t30' name='titulo-resultado' class="col col-grid-carrinho"
+                      style="display: none;">
+                    </div>
+
+                  </div>
+                  <div class="row no-gap">
+                    <div id='s-resultado-t31' name='titulo-resultado' class="col col-grid-carrinho"
+                      style="display: none;">
+                    </div>
+                    <div id='s-resultado-t32' name='titulo-resultado' class="col col-grid-carrinho"
+                      style="display: none;">
+                    </div>
+                    <div id='s-resultado-t33' name='titulo-resultado' class="col col-grid-carrinho"
+                      style="display: none;">
+                    </div>
+
+                  </div>
+                  <div class="row no-gap">
+                    <div id='s-resultado-t34' name='titulo-resultado' class="col col-grid-carrinho"
+                      style="display: none;">
+                    </div>
+                    <div id='s-resultado-t35' name='titulo-resultado' class="col col-grid-carrinho"
+                      style="display: none;">
+                    </div>
+                    <div id='s-resultado-t36' name='titulo-resultado' class="col col-grid-carrinho"
+                      style="display: none;">
+                    </div>
+
+                  </div>
+                  <div class="row no-gap">
+                    <div id='s-resultado-t37' name='titulo-resultado' class="col col-grid-carrinho"
+                      style="display: none;">
+                    </div>
+                    <div id='s-resultado-t38' name='titulo-resultado' class="col col-grid-carrinho"
+                      style="display: none;">
+                    </div>
+                    <div id='s-resultado-t39' name='titulo-resultado' class="col col-grid-carrinho"
+                      style="display: none;">
+                    </div>
+
+                  </div>
+                  <div class="row no-gap">
+                    <div id='s-resultado-t40' name='titulo-resultado' class="col col-grid-carrinho"
+                      style="display: none;">
+                    </div>
+                    <div id='s-resultado-t41' name='titulo-resultado' class="col col-grid-carrinho"
+                      style="display: none;">
+                    </div>
+                    <div id='s-resultado-t42' name='titulo-resultado' class="col col-grid-carrinho"
+                      style="display: none;">
+                    </div>
+
+                  </div>
+                  <div class="row no-gap">
+                    <div id='s-resultado-t43' name='titulo-resultado' class="col col-grid-carrinho"
+                      style="display: none;">
+                    </div>
+                    <div id='s-resultado-t44' name='titulo-resultado' class="col col-grid-carrinho"
+                      style="display: none;">
+                    </div>
+                    <div id='s-resultado-t45' name='titulo-resultado' class="col col-grid-carrinho"
+                      style="display: none;">
+                    </div>
+                  </div>
+                  <div class="row no-gap">
+                    <div id='s-resultado-t46' name='titulo-resultado' class="col col-grid-carrinho"
+                      style="display: none;">
+                    </div>
+                    <div id='s-resultado-t47' name='titulo-resultado' class="col col-grid-carrinho"
+                      style="display: none;">
+                    </div>
+                    <div id='s-resultado-t48' name='titulo-resultado' class="col col-grid-carrinho"
+                      style="display: none;">
+                    </div>
+                  </div>
+                  <div class="row no-gap">
+                    <div id='s-resultado-t49' name='titulo-resultado' class="col col-grid-carrinho"
+                      style="display: none;">
+                    </div>
+                    <div id='s-resultado-t50' name='titulo-resultado' class="col col-grid-carrinho"
+                      style="display: none;">
+                    </div>
+                    <div id='s-resultado-t51' name='titulo-resultado' class="col col-grid-carrinho"
+                      style="display: none;">
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div><!-- FIM accordion -->
+      </div><!-- FIM CARD SELECAO DE DATA -->
+    </div> <!-- FIM CARD CONFERIR SORTEIOS -->
+
+    <!-- CARD CONFERIR SORTEIOS -->
+    <div id="conferir_sorteios_semanal" class="card info-block" style="margin-top: 8px !important; display: none;">
+      <div class="block-title titulo-card-pagamento">
+        Selecione o Prêmio<br>que deseja conferir
+      </div>
+      <div class="selectConferirSorteio">
+        <div id="conferirItem_sorteios_semanal" name="conferirItem"
+          style="margin-right: 0px !important; margin-left: 0px !important; padding-bottom: 0px !important; margin-bottom: -8px !important;">
+          <div class="list" style="border-style: none;--f7-card-box-shadow:none">
+            <ul>
+              <li>
+                <div class="item-content item-input" style="padding-right: 0px; padding-left: 0px;height: 0px;">
+                  <div class="item-inner" style="padding-right: 0px;padding-bottom: 0px;padding-top: 0px;">
+                    <div class="item-input-wrap">
+                      <input type="text" placeholder="CLIQUE AQUI:" readonly="readonly"
+                        id="selecionarPremio_sorteios_semanal" class="input-with-value" style="text-align: center;" />
+                    </div>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </div> <!-- FIM list -->
+        </div>
+
+        <!-- accordion Numeros Sorteados -->
+        <div id="numerosSorteados_sorteios_semanal" class="list accordion-list" style="display: none;">
+          <ul>
+            <li class="accordion-item accordion-item-opened" style="margin: 4px;padding: 2px;">
+              <a href="#" class="item-content item-link">
+                <div class="item-inner" style="padding-top: 0px; padding-bottom: 0px; padding-right: 0px; background: #ffffff;
+                              margin-right: 4px;">
+                  <div class="item-title card-itens-pg">Números Sorteados</div>
+                </div>
+              </a>
+              <div class="accordion-item-content" style="padding-left: 6px;padding-right: 6px;margin-bottom: 0px;">
+
+                <div id='sm-resultado-b01' name='bolas-resultado' class="circulo-apagado">01</div>
+                <div id='sm-resultado-b02' name='bolas-resultado' class="circulo-apagado">02</div>
+                <div id='sm-resultado-b03' name='bolas-resultado' class="circulo-apagado">03</div>
+                <div id='sm-resultado-b04' name='bolas-resultado' class="circulo-apagado">04</div>
+                <div id='sm-resultado-b05' name='bolas-resultado' class="circulo-apagado">05</div>
+                <div id='sm-resultado-b06' name='bolas-resultado' class="circulo-apagado">06</div>
+                <div id='sm-resultado-b07' name='bolas-resultado' class="circulo-apagado">07</div>
+                <div id='sm-resultado-b08' name='bolas-resultado' class="circulo-apagado">08</div>
+                <div id='sm-resultado-b09' name='bolas-resultado' class="circulo-apagado">09</div>
+                <div id='sm-resultado-b10' name='bolas-resultado' class="circulo-apagado">10</div>
+                <div id='sm-resultado-b11' name='bolas-resultado' class="circulo-apagado">11</div>
+                <div id='sm-resultado-b12' name='bolas-resultado' class="circulo-apagado">12</div>
+                <div id='sm-resultado-b13' name='bolas-resultado' class="circulo-apagado">13</div>
+                <div id='sm-resultado-b14' name='bolas-resultado' class="circulo-apagado">14</div>
+                <div id='sm-resultado-b15' name='bolas-resultado' class="circulo-apagado">15</div>
+
+                <div id='sm-resultado-b16' name='bolas-resultado' class="circulo-apagado">16</div>
+                <div id='sm-resultado-b17' name='bolas-resultado' class="circulo-apagado">17</div>
+                <div id='sm-resultado-b18' name='bolas-resultado' class="circulo-apagado">18</div>
+                <div id='sm-resultado-b19' name='bolas-resultado' class="circulo-apagado">19</div>
+                <div id='sm-resultado-b20' name='bolas-resultado' class="circulo-apagado">20</div>
+                <div id='sm-resultado-b21' name='bolas-resultado' class="circulo-apagado">21</div>
+                <div id='sm-resultado-b22' name='bolas-resultado' class="circulo-apagado">22</div>
+                <div id='sm-resultado-b23' name='bolas-resultado' class="circulo-apagado">23</div>
+                <div id='sm-resultado-b24' name='bolas-resultado' class="circulo-apagado">24</div>
+                <div id='sm-resultado-b25' name='bolas-resultado' class="circulo-apagado">25</div>
+                <div id='sm-resultado-b26' name='bolas-resultado' class="circulo-apagado">26</div>
+                <div id='sm-resultado-b27' name='bolas-resultado' class="circulo-apagado">27</div>
+                <div id='sm-resultado-b28' name='bolas-resultado' class="circulo-apagado">28</div>
+                <div id='sm-resultado-b29' name='bolas-resultado' class="circulo-apagado">29</div>
+                <div id='sm-resultado-b30' name='bolas-resultado' class="circulo-apagado">30</div>
+
+                <div id='sm-resultado-b31' name='bolas-resultado' class="circulo-apagado">31</div>
+                <div id='sm-resultado-b32' name='bolas-resultado' class="circulo-apagado">32</div>
+                <div id='sm-resultado-b33' name='bolas-resultado' class="circulo-apagado">33</div>
+                <div id='sm-resultado-b34' name='bolas-resultado' class="circulo-apagado">34</div>
+                <div id='sm-resultado-b35' name='bolas-resultado' class="circulo-apagado">35</div>
+                <div id='sm-resultado-b36' name='bolas-resultado' class="circulo-apagado">36</div>
+                <div id='sm-resultado-b37' name='bolas-resultado' class="circulo-apagado">37</div>
+                <div id='sm-resultado-b38' name='bolas-resultado' class="circulo-apagado">38</div>
+                <div id='sm-resultado-b39' name='bolas-resultado' class="circulo-apagado">39</div>
+                <div id='sm-resultado-b40' name='bolas-resultado' class="circulo-apagado">40</div>
+                <div id='sm-resultado-b41' name='bolas-resultado' class="circulo-apagado">41</div>
+                <div id='sm-resultado-b42' name='bolas-resultado' class="circulo-apagado">42</div>
+                <div id='sm-resultado-b43' name='bolas-resultado' class="circulo-apagado">43</div>
+                <div id='sm-resultado-b44' name='bolas-resultado' class="circulo-apagado">44</div>
+                <div id='sm-resultado-b45' name='bolas-resultado' class="circulo-apagado">45</div>
+
+                <div id='sm-resultado-b46' name='bolas-resultado' class="circulo-apagado">46</div>
+                <div id='sm-resultado-b47' name='bolas-resultado' class="circulo-apagado">47</div>
+                <div id='sm-resultado-b48' name='bolas-resultado' class="circulo-apagado">48</div>
+                <div id='sm-resultado-b49' name='bolas-resultado' class="circulo-apagado">49</div>
+                <div id='sm-resultado-b50' name='bolas-resultado' class="circulo-apagado">50</div>
+                <div id='sm-resultado-b51' name='bolas-resultado' class="circulo-apagado">51</div>
+                <div id='sm-resultado-b52' name='bolas-resultado' class="circulo-apagado">52</div>
+                <div id='sm-resultado-b53' name='bolas-resultado' class="circulo-apagado">53</div>
+                <div id='sm-resultado-b54' name='bolas-resultado' class="circulo-apagado">54</div>
+                <div id='sm-resultado-b55' name='bolas-resultado' class="circulo-apagado">55</div>
+                <div id='sm-resultado-b56' name='bolas-resultado' class="circulo-apagado">56</div>
+                <div id='sm-resultado-b57' name='bolas-resultado' class="circulo-apagado">57</div>
+                <div id='sm-resultado-b58' name='bolas-resultado' class="circulo-apagado">58</div>
+                <div id='sm-resultado-b59' name='bolas-resultado' class="circulo-apagado">59</div>
+                <div id='sm-resultado-b60' name='bolas-resultado' class="circulo-apagado">60</div>
+
+                <div class="row" style="padding-top: 8px;padding-bottom: 8px;justify-content: center;width: 100%;">
+                  <div name='legenda' class="circulo-preferido"></div>
+                  <span
+                    style="font-size: 0.8em;color: #23458b !important;font-weight: bold !important;  margin-top: 4px; margin-left: 4px;">
+                    Bolas Sorteadas
+                  </span>
+                </div>
+
+              </div>
+            </li>
+          </ul>
+        </div><!-- FIM accordion -->
+
+        <!-- accordion títulos Sorteados -->
+        <div id="titulosSorteados_sorteios_semanal" class="list accordion-list" style="display: none;">
+          <ul>
+            <li class="accordion-item accordion-item-opened" style="margin: 4px;padding: 2px;">
+              <a href="#" class="item-content item-link">
+                <div class="item-inner" style="padding-top: 0px; padding-bottom: 0px; padding-right: 0px; background: #ffffff;
+                              margin-right: 4px;">
+                  <div class="item-title card-itens-pg">Títulos Sorteados</div>
+                </div>
+              </a>
+              <div class="accordion-item-content" style="padding-left: 16px;padding-right: 16px;margin-bottom: 10px;">
+                <div class="block" style="padding-left: 0px;padding-right: 0px">
+                  <div class="row no-gap">
+                    <div id='sm-resultado-t1' name='titulo-resultado' class="col col-grid-carrinho"
+                      style="display: none;">
+                    </div>
+                    <div id='sm-resultado-t2' name='titulo-resultado' class="col col-grid-carrinho"
+                      style="display: none;">
+                    </div>
+                    <div id='sm-resultado-t3' name='titulo-resultado' class="col col-grid-carrinho"
+                      style="display: none;">
+                    </div>
+                  </div>
+                  <div class="row no-gap">
+                    <div id='sm-resultado-t4' name='titulo-resultado' class="col col-grid-carrinho"
+                      style="display: none;">
+                    </div>
+                    <div id='sm-resultado-t5' name='titulo-resultado' class="col col-grid-carrinho"
+                      style="display: none;">
+                    </div>
+                    <div id='sm-resultado-t6' name='titulo-resultado' class="col col-grid-carrinho"
+                      style="display: none;">
+                    </div>
+                  </div>
+                  <div class="row no-gap">
+                    <div id='sm-resultado-t7' name='titulo-resultado' class="col col-grid-carrinho"
+                      style="display: none;">
+                    </div>
+                    <div id='sm-resultado-t8' name='titulo-resultado' class="col col-grid-carrinho"
+                      style="display: none;">
+                    </div>
+                    <div id='sm-resultado-t9' name='titulo-resultado' class="col col-grid-carrinho"
+                      style="display: none;">
+                    </div>
+                  </div>
+
+                  <div class="row no-gap">
+                    <div id='sm-resultado-t10' name='titulo-resultado' class="col col-grid-carrinho"
+                      style="display: none;">
+                    </div>
+                    <div id='sm-resultado-t11' name='titulo-resultado' class="col col-grid-carrinho"
+                      style="display: none;">
+                    </div>
+                    <div id='sm-resultado-t12' name='titulo-resultado' class="col col-grid-carrinho"
+                      style="display: none;">
+                    </div>
+                  </div>
+                  <div class="row no-gap">
+                    <div id='sm-resultado-t13' name='titulo-resultado' class="col col-grid-carrinho"
+                      style="display: none;">
+                    </div>
+                    <div id='sm-resultado-t14' name='titulo-resultado' class="col col-grid-carrinho"
+                      style="display: none;">
+                    </div>
+                    <div id='sm-resultado-t15' name='titulo-resultado' class="col col-grid-carrinho"
+                      style="display: none;">
+                    </div>
+
+                  </div>
+                  <div class="row no-gap">
+                    <div id='sm-resultado-t16' name='titulo-resultado' class="col col-grid-carrinho"
+                      style="display: none;">
+                    </div>
+                    <div id='sm-resultado-t17' name='titulo-resultado' class="col col-grid-carrinho"
+                      style="display: none;">
+                    </div>
+                    <div id='sm-resultado-t18' name='titulo-resultado' class="col col-grid-carrinho"
+                      style="display: none;">
+                    </div>
+
+                  </div>
+                  <div class="row no-gap">
+                    <div id='sm-resultado-t19' name='titulo-resultado' class="col col-grid-carrinho"
+                      style="display: none;">
+                    </div>
+                    <div id='sm-resultado-t20' name='titulo-resultado' class="col col-grid-carrinho"
+                      style="display: none;">
+                    </div>
+                    <div id='sm-resultado-t21' name='titulo-resultado' class="col col-grid-carrinho"
+                      style="display: none;">
+                    </div>
+                  </div>
+                  <div class="row no-gap">
+                    <div id='sm-resultado-t22' name='titulo-resultado' class="col col-grid-carrinho"
+                      style="display: none;">
+                    </div>
+                    <div id='sm-resultado-t23' name='titulo-resultado' class="col col-grid-carrinho"
+                      style="display: none;">
+                    </div>
+                    <div id='sm-resultado-t24' name='titulo-resultado' class="col col-grid-carrinho"
+                      style="display: none;">
+                    </div>
+
+                  </div>
+                  <div class="row no-gap">
+                    <div id='sm-resultado-t25' name='titulo-resultado' class="col col-grid-carrinho"
+                      style="display: none;">
+                    </div>
+                    <div id='sm-resultado-t26' name='titulo-resultado' class="col col-grid-carrinho"
+                      style="display: none;">
+                    </div>
+                    <div id='sm-resultado-t27' name='titulo-resultado' class="col col-grid-carrinho"
+                      style="display: none;">
+                    </div>
+
+                  </div>
+                  <div class="row no-gap">
+                    <div id='sm-resultado-t28' name='titulo-resultado' class="col col-grid-carrinho"
+                      style="display: none;">
+                    </div>
+                    <div id='sm-resultado-t29' name='titulo-resultado' class="col col-grid-carrinho"
+                      style="display: none;">
+                    </div>
+                    <div id='sm-resultado-t30' name='titulo-resultado' class="col col-grid-carrinho"
+                      style="display: none;">
+                    </div>
+
+                  </div>
+                  <div class="row no-gap">
+                    <div id='sm-resultado-t31' name='titulo-resultado' class="col col-grid-carrinho"
+                      style="display: none;">
+                    </div>
+                    <div id='sm-resultado-t32' name='titulo-resultado' class="col col-grid-carrinho"
+                      style="display: none;">
+                    </div>
+                    <div id='sm-resultado-t33' name='titulo-resultado' class="col col-grid-carrinho"
+                      style="display: none;">
+                    </div>
+
+                  </div>
+                  <div class="row no-gap">
+                    <div id='sm-resultado-t34' name='titulo-resultado' class="col col-grid-carrinho"
+                      style="display: none;">
+                    </div>
+                    <div id='sm-resultado-t35' name='titulo-resultado' class="col col-grid-carrinho"
+                      style="display: none;">
+                    </div>
+                    <div id='sm-resultado-t36' name='titulo-resultado' class="col col-grid-carrinho"
+                      style="display: none;">
+                    </div>
+
+                  </div>
+                  <div class="row no-gap">
+                    <div id='sm-resultado-t37' name='titulo-resultado' class="col col-grid-carrinho"
+                      style="display: none;">
+                    </div>
+                    <div id='sm-resultado-t38' name='titulo-resultado' class="col col-grid-carrinho"
+                      style="display: none;">
+                    </div>
+                    <div id='sm-resultado-t39' name='titulo-resultado' class="col col-grid-carrinho"
+                      style="display: none;">
+                    </div>
+
+                  </div>
+                  <div class="row no-gap">
+                    <div id='sm-resultado-t40' name='titulo-resultado' class="col col-grid-carrinho"
+                      style="display: none;">
+                    </div>
+                    <div id='sm-resultado-t41' name='titulo-resultado' class="col col-grid-carrinho"
+                      style="display: none;">
+                    </div>
+                    <div id='sm-resultado-t42' name='titulo-resultado' class="col col-grid-carrinho"
+                      style="display: none;">
+                    </div>
+
+                  </div>
+                  <div class="row no-gap">
+                    <div id='sm-resultado-t43' name='titulo-resultado' class="col col-grid-carrinho"
+                      style="display: none;">
+                    </div>
+                    <div id='sm-resultado-t44' name='titulo-resultado' class="col col-grid-carrinho"
+                      style="display: none;">
+                    </div>
+                    <div id='sm-resultado-t45' name='titulo-resultado' class="col col-grid-carrinho"
+                      style="display: none;">
+                    </div>
+                  </div>
+                  <div class="row no-gap">
+                    <div id='sm-resultado-t46' name='titulo-resultado' class="col col-grid-carrinho"
+                      style="display: none;">
+                    </div>
+                    <div id='sm-resultado-t47' name='titulo-resultado' class="col col-grid-carrinho"
+                      style="display: none;">
+                    </div>
+                    <div id='sm-resultado-t48' name='titulo-resultado' class="col col-grid-carrinho"
+                      style="display: none;">
+                    </div>
+                  </div>
+                  <div class="row no-gap">
+                    <div id='sm-resultado-t49' name='titulo-resultado' class="col col-grid-carrinho"
+                      style="display: none;">
+                    </div>
+                    <div id='sm-resultado-t50' name='titulo-resultado' class="col col-grid-carrinho"
+                      style="display: none;">
+                    </div>
+                    <div id='sm-resultado-t51' name='titulo-resultado' class="col col-grid-carrinho"
+                      style="display: none;">
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div><!-- FIM accordion -->
+      </div><!-- FIM CARD SELECAO DE DATA -->
+    </div> <!-- FIM CARD CONFERIR SORTEIOS -->
+
+    <!-- CARD CONFERIR SORTEIOS -->
+    <div id="conferir_sorteios_extra" class="card info-block" style="margin-top: 8px !important; display: none;">
+      <div class="block-title titulo-card-pagamento">
+        Selecione o Prêmio<br>que deseja conferir
+      </div>
+      <div class="selectConferirSorteio">
+        <div id="conferirItem_sorteios_extra" name="conferirItem"
+          style="margin-right: 0px !important; margin-left: 0px !important; padding-bottom: 0px !important; margin-bottom: -8px !important;">
+          <div class="list" style="border-style: none;--f7-card-box-shadow:none">
+            <ul>
+              <li>
+                <div class="item-content item-input" style="padding-right: 0px; padding-left: 0px;height: 0px;">
+                  <div class="item-inner" style="padding-right: 0px;padding-bottom: 0px;padding-top: 0px;">
+                    <div class="item-input-wrap">
+                      <input type="text" placeholder="CLIQUE AQUI:" readonly="readonly"
+                        id="selecionarPremio_sorteios_extra" class="input-with-value" style="text-align: center;" />
+                    </div>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </div> <!-- FIM list -->
+        </div>
+
+        <!-- accordion Numeros Sorteados -->
+        <div id="numerosSorteados_sorteios_extra" class="list accordion-list" style="display: none;">
+          <ul>
+            <li class="accordion-item accordion-item-opened" style="margin: 4px;padding: 2px;">
+              <a href="#" class="item-content item-link">
+                <div class="item-inner" style="padding-top: 0px; padding-bottom: 0px; padding-right: 0px; background: #ffffff;
+                                  margin-right: 4px;">
+                  <div class="item-title card-itens-pg">Números Sorteados</div>
+                </div>
+              </a>
+              <div class="accordion-item-content" style="padding-left: 6px;padding-right: 6px;margin-bottom: 0px;">
+
+                <div id='se-resultado-b01' name='bolas-resultado' class="circulo-apagado">01</div>
+                <div id='se-resultado-b02' name='bolas-resultado' class="circulo-apagado">02</div>
+                <div id='se-resultado-b03' name='bolas-resultado' class="circulo-apagado">03</div>
+                <div id='se-resultado-b04' name='bolas-resultado' class="circulo-apagado">04</div>
+                <div id='se-resultado-b05' name='bolas-resultado' class="circulo-apagado">05</div>
+                <div id='se-resultado-b06' name='bolas-resultado' class="circulo-apagado">06</div>
+                <div id='se-resultado-b07' name='bolas-resultado' class="circulo-apagado">07</div>
+                <div id='se-resultado-b08' name='bolas-resultado' class="circulo-apagado">08</div>
+                <div id='se-resultado-b09' name='bolas-resultado' class="circulo-apagado">09</div>
+                <div id='se-resultado-b10' name='bolas-resultado' class="circulo-apagado">10</div>
+                <div id='se-resultado-b11' name='bolas-resultado' class="circulo-apagado">11</div>
+                <div id='se-resultado-b12' name='bolas-resultado' class="circulo-apagado">12</div>
+                <div id='se-resultado-b13' name='bolas-resultado' class="circulo-apagado">13</div>
+                <div id='se-resultado-b14' name='bolas-resultado' class="circulo-apagado">14</div>
+                <div id='se-resultado-b15' name='bolas-resultado' class="circulo-apagado">15</div>
+
+                <div id='se-resultado-b16' name='bolas-resultado' class="circulo-apagado">16</div>
+                <div id='se-resultado-b17' name='bolas-resultado' class="circulo-apagado">17</div>
+                <div id='se-resultado-b18' name='bolas-resultado' class="circulo-apagado">18</div>
+                <div id='se-resultado-b19' name='bolas-resultado' class="circulo-apagado">19</div>
+                <div id='se-resultado-b20' name='bolas-resultado' class="circulo-apagado">20</div>
+                <div id='se-resultado-b21' name='bolas-resultado' class="circulo-apagado">21</div>
+                <div id='se-resultado-b22' name='bolas-resultado' class="circulo-apagado">22</div>
+                <div id='se-resultado-b23' name='bolas-resultado' class="circulo-apagado">23</div>
+                <div id='se-resultado-b24' name='bolas-resultado' class="circulo-apagado">24</div>
+                <div id='se-resultado-b25' name='bolas-resultado' class="circulo-apagado">25</div>
+                <div id='se-resultado-b26' name='bolas-resultado' class="circulo-apagado">26</div>
+                <div id='se-resultado-b27' name='bolas-resultado' class="circulo-apagado">27</div>
+                <div id='se-resultado-b28' name='bolas-resultado' class="circulo-apagado">28</div>
+                <div id='se-resultado-b29' name='bolas-resultado' class="circulo-apagado">29</div>
+                <div id='se-resultado-b30' name='bolas-resultado' class="circulo-apagado">30</div>
+
+                <div id='se-resultado-b31' name='bolas-resultado' class="circulo-apagado">31</div>
+                <div id='se-resultado-b32' name='bolas-resultado' class="circulo-apagado">32</div>
+                <div id='se-resultado-b33' name='bolas-resultado' class="circulo-apagado">33</div>
+                <div id='se-resultado-b34' name='bolas-resultado' class="circulo-apagado">34</div>
+                <div id='se-resultado-b35' name='bolas-resultado' class="circulo-apagado">35</div>
+                <div id='se-resultado-b36' name='bolas-resultado' class="circulo-apagado">36</div>
+                <div id='se-resultado-b37' name='bolas-resultado' class="circulo-apagado">37</div>
+                <div id='se-resultado-b38' name='bolas-resultado' class="circulo-apagado">38</div>
+                <div id='se-resultado-b39' name='bolas-resultado' class="circulo-apagado">39</div>
+                <div id='se-resultado-b40' name='bolas-resultado' class="circulo-apagado">40</div>
+                <div id='se-resultado-b41' name='bolas-resultado' class="circulo-apagado">41</div>
+                <div id='se-resultado-b42' name='bolas-resultado' class="circulo-apagado">42</div>
+                <div id='se-resultado-b43' name='bolas-resultado' class="circulo-apagado">43</div>
+                <div id='se-resultado-b44' name='bolas-resultado' class="circulo-apagado">44</div>
+                <div id='se-resultado-b45' name='bolas-resultado' class="circulo-apagado">45</div>
+
+                <div id='se-resultado-b46' name='bolas-resultado' class="circulo-apagado">46</div>
+                <div id='se-resultado-b47' name='bolas-resultado' class="circulo-apagado">47</div>
+                <div id='se-resultado-b48' name='bolas-resultado' class="circulo-apagado">48</div>
+                <div id='se-resultado-b49' name='bolas-resultado' class="circulo-apagado">49</div>
+                <div id='se-resultado-b50' name='bolas-resultado' class="circulo-apagado">50</div>
+                <div id='se-resultado-b51' name='bolas-resultado' class="circulo-apagado">51</div>
+                <div id='se-resultado-b52' name='bolas-resultado' class="circulo-apagado">52</div>
+                <div id='se-resultado-b53' name='bolas-resultado' class="circulo-apagado">53</div>
+                <div id='se-resultado-b54' name='bolas-resultado' class="circulo-apagado">54</div>
+                <div id='se-resultado-b55' name='bolas-resultado' class="circulo-apagado">55</div>
+                <div id='se-resultado-b56' name='bolas-resultado' class="circulo-apagado">56</div>
+                <div id='se-resultado-b57' name='bolas-resultado' class="circulo-apagado">57</div>
+                <div id='se-resultado-b58' name='bolas-resultado' class="circulo-apagado">58</div>
+                <div id='se-resultado-b59' name='bolas-resultado' class="circulo-apagado">59</div>
+                <div id='se-resultado-b60' name='bolas-resultado' class="circulo-apagado">60</div>
+
+                <div class="row" style="padding-top: 8px;padding-bottom: 8px;justify-content: center;width: 100%;">
+                  <div name='legenda' class="circulo-preferido"></div>
+                  <span
+                    style="font-size: 0.8em;color: #23458b !important;font-weight: bold !important;  margin-top: 4px; margin-left: 4px;">
+                    Bolas Sorteadas
+                  </span>
+                </div>
+
+              </div>
+            </li>
+          </ul>
+        </div><!-- FIM accordion -->
+
+        <!-- accordion títulos Sorteados -->
+        <div id="titulosSorteados_sorteios_extra" class="list accordion-list" style="display: none;">
+          <ul>
+            <li class="accordion-item accordion-item-opened" style="margin: 4px;padding: 2px;">
+              <a href="#" class="item-content item-link">
+                <div class="item-inner" style="padding-top: 0px; padding-bottom: 0px; padding-right: 0px; background: #ffffff;
+                                  margin-right: 4px;">
+                  <div class="item-title card-itens-pg">Títulos Sorteados</div>
+                </div>
+              </a>
+              <div class="accordion-item-content" style="padding-left: 16px;padding-right: 16px;margin-bottom: 10px;">
+                <div class="block" style="padding-left: 0px;padding-right: 0px">
+                  <div class="row no-gap">
+                    <div id='se-resultado-t1' name='titulo-resultado' class="col col-grid-carrinho"
+                      style="display: none;">
+                    </div>
+                    <div id='se-resultado-t2' name='titulo-resultado' class="col col-grid-carrinho"
+                      style="display: none;">
+                    </div>
+                    <div id='se-resultado-t3' name='titulo-resultado' class="col col-grid-carrinho"
+                      style="display: none;">
+                    </div>
+                  </div>
+                  <div class="row no-gap">
+                    <div id='se-resultado-t4' name='titulo-resultado' class="col col-grid-carrinho"
+                      style="display: none;">
+                    </div>
+                    <div id='se-resultado-t5' name='titulo-resultado' class="col col-grid-carrinho"
+                      style="display: none;">
+                    </div>
+                    <div id='se-resultado-t6' name='titulo-resultado' class="col col-grid-carrinho"
+                      style="display: none;">
+                    </div>
+                  </div>
+                  <div class="row no-gap">
+                    <div id='se-resultado-t7' name='titulo-resultado' class="col col-grid-carrinho"
+                      style="display: none;">
+                    </div>
+                    <div id='se-resultado-t8' name='titulo-resultado' class="col col-grid-carrinho"
+                      style="display: none;">
+                    </div>
+                    <div id='se-resultado-t9' name='titulo-resultado' class="col col-grid-carrinho"
+                      style="display: none;">
+                    </div>
+                  </div>
+
+                  <div class="row no-gap">
+                    <div id='se-resultado-t10' name='titulo-resultado' class="col col-grid-carrinho"
+                      style="display: none;">
+                    </div>
+                    <div id='se-resultado-t11' name='titulo-resultado' class="col col-grid-carrinho"
+                      style="display: none;">
+                    </div>
+                    <div id='se-resultado-t12' name='titulo-resultado' class="col col-grid-carrinho"
+                      style="display: none;">
+                    </div>
+                  </div>
+                  <div class="row no-gap">
+                    <div id='se-resultado-t13' name='titulo-resultado' class="col col-grid-carrinho"
+                      style="display: none;">
+                    </div>
+                    <div id='se-resultado-t14' name='titulo-resultado' class="col col-grid-carrinho"
+                      style="display: none;">
+                    </div>
+                    <div id='se-resultado-t15' name='titulo-resultado' class="col col-grid-carrinho"
+                      style="display: none;">
+                    </div>
+
+                  </div>
+                  <div class="row no-gap">
+                    <div id='se-resultado-t16' name='titulo-resultado' class="col col-grid-carrinho"
+                      style="display: none;">
+                    </div>
+                    <div id='se-resultado-t17' name='titulo-resultado' class="col col-grid-carrinho"
+                      style="display: none;">
+                    </div>
+                    <div id='se-resultado-t18' name='titulo-resultado' class="col col-grid-carrinho"
+                      style="display: none;">
+                    </div>
+
+                  </div>
+                  <div class="row no-gap">
+                    <div id='se-resultado-t19' name='titulo-resultado' class="col col-grid-carrinho"
+                      style="display: none;">
+                    </div>
+                    <div id='se-resultado-t20' name='titulo-resultado' class="col col-grid-carrinho"
+                      style="display: none;">
+                    </div>
+                    <div id='se-resultado-t21' name='titulo-resultado' class="col col-grid-carrinho"
+                      style="display: none;">
+                    </div>
+                  </div>
+                  <div class="row no-gap">
+                    <div id='se-resultado-t22' name='titulo-resultado' class="col col-grid-carrinho"
+                      style="display: none;">
+                    </div>
+                    <div id='se-resultado-t23' name='titulo-resultado' class="col col-grid-carrinho"
+                      style="display: none;">
+                    </div>
+                    <div id='se-resultado-t24' name='titulo-resultado' class="col col-grid-carrinho"
+                      style="display: none;">
+                    </div>
+
+                  </div>
+                  <div class="row no-gap">
+                    <div id='se-resultado-t25' name='titulo-resultado' class="col col-grid-carrinho"
+                      style="display: none;">
+                    </div>
+                    <div id='se-resultado-t26' name='titulo-resultado' class="col col-grid-carrinho"
+                      style="display: none;">
+                    </div>
+                    <div id='se-resultado-t27' name='titulo-resultado' class="col col-grid-carrinho"
+                      style="display: none;">
+                    </div>
+
+                  </div>
+                  <div class="row no-gap">
+                    <div id='se-resultado-t28' name='titulo-resultado' class="col col-grid-carrinho"
+                      style="display: none;">
+                    </div>
+                    <div id='se-resultado-t29' name='titulo-resultado' class="col col-grid-carrinho"
+                      style="display: none;">
+                    </div>
+                    <div id='se-resultado-t30' name='titulo-resultado' class="col col-grid-carrinho"
+                      style="display: none;">
+                    </div>
+
+                  </div>
+                  <div class="row no-gap">
+                    <div id='se-resultado-t31' name='titulo-resultado' class="col col-grid-carrinho"
+                      style="display: none;">
+                    </div>
+                    <div id='se-resultado-t32' name='titulo-resultado' class="col col-grid-carrinho"
+                      style="display: none;">
+                    </div>
+                    <div id='se-resultado-t33' name='titulo-resultado' class="col col-grid-carrinho"
+                      style="display: none;">
+                    </div>
+
+                  </div>
+                  <div class="row no-gap">
+                    <div id='se-resultado-t34' name='titulo-resultado' class="col col-grid-carrinho"
+                      style="display: none;">
+                    </div>
+                    <div id='se-resultado-t35' name='titulo-resultado' class="col col-grid-carrinho"
+                      style="display: none;">
+                    </div>
+                    <div id='se-resultado-t36' name='titulo-resultado' class="col col-grid-carrinho"
+                      style="display: none;">
+                    </div>
+
+                  </div>
+                  <div class="row no-gap">
+                    <div id='se-resultado-t37' name='titulo-resultado' class="col col-grid-carrinho"
+                      style="display: none;">
+                    </div>
+                    <div id='se-resultado-t38' name='titulo-resultado' class="col col-grid-carrinho"
+                      style="display: none;">
+                    </div>
+                    <div id='se-resultado-t39' name='titulo-resultado' class="col col-grid-carrinho"
+                      style="display: none;">
+                    </div>
+
+                  </div>
+                  <div class="row no-gap">
+                    <div id='se-resultado-t40' name='titulo-resultado' class="col col-grid-carrinho"
+                      style="display: none;">
+                    </div>
+                    <div id='se-resultado-t41' name='titulo-resultado' class="col col-grid-carrinho"
+                      style="display: none;">
+                    </div>
+                    <div id='se-resultado-t42' name='titulo-resultado' class="col col-grid-carrinho"
+                      style="display: none;">
+                    </div>
+
+                  </div>
+                  <div class="row no-gap">
+                    <div id='se-resultado-t43' name='titulo-resultado' class="col col-grid-carrinho"
+                      style="display: none;">
+                    </div>
+                    <div id='se-resultado-t44' name='titulo-resultado' class="col col-grid-carrinho"
+                      style="display: none;">
+                    </div>
+                    <div id='se-resultado-t45' name='titulo-resultado' class="col col-grid-carrinho"
+                      style="display: none;">
+                    </div>
+                  </div>
+                  <div class="row no-gap">
+                    <div id='se-resultado-t46' name='titulo-resultado' class="col col-grid-carrinho"
+                      style="display: none;">
+                    </div>
+                    <div id='se-resultado-t47' name='titulo-resultado' class="col col-grid-carrinho"
+                      style="display: none;">
+                    </div>
+                    <div id='se-resultado-t48' name='titulo-resultado' class="col col-grid-carrinho"
+                      style="display: none;">
+                    </div>
+                  </div>
+                  <div class="row no-gap">
+                    <div id='se-resultado-t49' name='titulo-resultado' class="col col-grid-carrinho"
+                      style="display: none;">
+                    </div>
+                    <div id='se-resultado-t50' name='titulo-resultado' class="col col-grid-carrinho"
+                      style="display: none;">
+                    </div>
+                    <div id='se-resultado-t51' name='titulo-resultado' class="col col-grid-carrinho"
+                      style="display: none;">
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div><!-- FIM accordion -->
+      </div><!-- FIM CARD SELECAO DE DATA -->
+    </div> <!-- FIM CARD CONFERIR SORTEIOS -->
+
+
+    <!-- CARD TITULOS -->
+    <div id="cardtitulos" class="card" style="padding-top: 1px; display: none; padding-bottom: 0px !important;">
+      <div class="block-title titulo-card-pagamento">
+        <span eda-text="pages.meustitulos.titulo1">Meus Titulos Comprados</span>
+        <br>
+        <input type="hidden" id="hiddenTipo_sorteios" value="">
+        <input type="hidden" id="hiddenTipo_sorteios_semanal" value="">
+        <input type="hidden" id="hiddenTipo_sorteios_extra" value="">
+        <span eda-showHide="pages.meustitulos.processoSusepshowHide">
+          <span id='proc_susep_sorteios' style="display: none;">
+            Processo SUSEP: <span id="susep_span_sorteios" class="color-azul"></span><br>
+          </span>
+          <span id='proc_susep_sorteios_semanal' style="display: none;">
+            Processo SUSEP: <span id="susep_span_sorteios_semanal" class="color-azul"></span><br>
+          </span>
+          <span id='proc_susep_sorteios_extra' style="display: none;">
+            Processo SUSEP: <span id="susep_span_sorteios_extra" class="color-azul"></span><br>
+          </span>
+        </span>
+
+        Data Sorteio: <span id="data_sorteio_span" class="color-azul"></span><br>
+        <span id='qtc_sorteios' style="display: none;">Quant. Comprados:
+          <span id="quant_sorteio_span_sorteios" class="color-azul"></span>
+        </span>
+        <span id='qtc_sorteios_semanal' style="display: none;">Quant. Comprados:
+          <span id="quant_sorteio_span_sorteios_semanal" class="color-azul"></span>
+        </span>
+        <span id='qtc_sorteios_extra' style="display: none;">Quant. Comprados:
+          <span id="quant_sorteio_span_sorteios_extra" class="color-azul"></span>
+        </span>
+      </div>
+      <!-- jQUERY ADICIONA AS CARTELAS AQUI -->
+      <div id="titulos_sorteios" class="card conjuntoCardTitulos titulos_sorteios"
+        style="padding-bottom: 4px;padding-bottom: 10px !important;"></div>
+      <div id="titulos_sorteios_semanal" class="card conjuntoCardTitulos titulos_sorteios_semanal"
+        style="padding-bottom: 4px;padding-bottom: 10px !important;"></div>
+      <div id="titulos_sorteios_extra" class="card conjuntoCardTitulos titulos_sorteios_extra"
+        style="padding-bottom: 4px;padding-bottom: 10px !important;"></div>
+    </div> <!-- FIM CARD TITULO E NUMEROS PREFERIDOS / favoritos -->
+    <!-- MSG FINAL TITULOS -->
+
+    <!-- MSG SEM TITULOS -->
+    <div id="cardSemTitulos" class="card block-strong inset block-pg-metodo"
+      style="margin-top: 8px; margin-bottom: 10px !important; display: none;">
+      <div class="block-title titulo-card-pagamento">Histórico de compras</div>
+      <div class="card-content card-content-padding" style="padding-top: 4px;padding-bottom: 4px">
+        <p style="text-align: center;">
+          <span eda-text="pages.meustitulos.msgSemHistorico"></span>
+        </p>
+      </div>
+    </div><!-- FIM MSG SEM TITULOS -->
+
+    <!-- MSG SEM TITULOS -->
+    <div id="cardCompraZerada" class="card block-strong inset block-pg-metodo"
+      style="margin-top: 8px; margin-bottom: 10px !important; display: none;">
+      <div class="block-title titulo-card-pagamento">Histórico de compras</div>
+      <div class="card-content card-content-padding" style="padding-top: 4px;padding-bottom: 4px">
+        <p style="text-align: center;">
+          <span eda-text="pages.meustitulos.msgSemCompraZerada"></span>
+        </p>
+      </div>
+    </div><!-- FIM MSG SEM TITULOS -->
+
+    <!-- MSG SEM OBSERVACOES -->
+    <div id="cardObservacoes" class="card block-strong inset block-pg-metodo"
+      style="margin-top:10px !important; margin-bottom: 10px !important;">
+      <div class="block-title titulo-card-pagamento">Observações</div>
+      <div class="card-content card-content-padding" style="padding-top: 4px;padding-bottom: 4px">
+        <p style="text-align: center;">
+          Estão disponíveis para consulta, o histórico de compras dos últimos 6 meses.<br>
+          Em caso de dúvidas ou sugestões, entre em contato com nossa central de atendimento.
+        </p>
+      </div>
+    </div><!-- MSG FIM SEM OBSERVACOES -->
+    <!-- POP UP RASPADINHA -->
+    <div id="popupRasp" class="popup popupRasp popup-comprar popupColor popup-swipe-to-close"
+      stye="height:auto !important;" data-close-By-Backdrop-Click="false">
+      <div class="block" style="margin-top: 18px;padding:0px !important">
+        <div class="block-title titulo-card-login" style="color:#db1921 !important">
+          Raspadinha Digital - Boa sorte !<br>
+        </div>
+        <!-- Close Popup -->
+        <i class="mdi mdi-close-circle color-vermelho popup-recuperar-senha-btn-fechar link popup-close">
+        </i>
+        <div class="block" style="margin:0px !important;padding:0px !important">
+
+          <div class="BlockRaspadinha" id="blocoA">
+
+            <div id='divraspTitulo_A' class="block-title titulo-card-login" style="color:#db1921 !important">
+              <span id="raspTitulo_A"></span>
+            </div>
+            <div id='divCardraspTitulo_A' class="card card-comprar areaRaspadinhaExterna">
+              <div class="row" style="height:auto;justify-content: center;">
+                <div id="cardRasp_A" class="scratchpad areaRaspadinhaInterna" numTitulo="" guid="">
+                </div>
+                <div id='cardPremio' class="raspPremio">
+                  <span id="rasp_msg0_A" eda-text="dadosComum.msg_rasp_aguarde">Raspou, achou, ganhou !</span>
+                  <span id="rasp_msg1_A"></span></br>
+                  <span id="rasp_msg2_A" style="font-size: 0.7em;"></span>
+                  <input type="hidden" id='numTitulo_A' />
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="BlockRaspadinha" id="blocoB" style="display: none;">
+            <div id='divraspTitulo_B' class="block-title titulo-card-login" style="color:#db1921 !important">
+              <span id="raspTitulo_B"></span>
+            </div>
+            <div id='divCardraspTitulo_B' class="card card-comprar areaRaspadinhaExterna">
+              <div class="row" style="height:auto;justify-content: center;">
+                <div id="cardRasp_B" class="scratchpad areaRaspadinhaInterna" numTitulo="" guid="">
+                </div>
+                <div id='cardPremio' class="raspPremio">
+                  <span id="rasp_msg0_B" eda-text="dadosComum.msg_rasp_aguarde">Raspou, achou, ganhou !</span>
+                  <span id="rasp_msg1_B"></span></br>
+                  <span id="rasp_msg2_B" style="font-size: 0.7em;"></span>
+                  <input type="hidden" id='numTitulo_B' />
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="BlockRaspadinha" id="blocoC" style="display: none;">
+            <div id='divraspTitulo_C' class="block-title titulo-card-login" style="color:#db1921 !important">
+              <span id="raspTitulo_C"></span>
+            </div>
+            <div id='divCardraspTitulo_C' class="card card-comprar areaRaspadinhaExterna">
+              <div class="row" style="height:auto;justify-content: center;">
+                <div id="cardRasp_C" class="scratchpad areaRaspadinhaInterna" numTitulo="" guid="">
+                </div>
+                <div id='cardPremio' class="raspPremio">
+                  <span id="rasp_msg0_C" eda-text="dadosComum.msg_rasp_aguarde">Raspou, achou, ganhou !</span>
+                  <span id="rasp_msg1_C"></span></br>
+                  <span id="rasp_msg2_C" style="font-size: 0.7em;"></span>
+                  <input type="hidden" id='numTitulo_C' />
+                </div>
+              </div>
+            </div>
+          </div>
+          <div id='texto_paginacao' class="blockRaspadinha_faixa"></div>
+          <div id='rasp_paginacao' class="blockRaspadinha_faixa">
+            <input type="hidden" id='hidden_pagina' name="hidden_pagina" value="A" />
+            <input type="hidden" id='hidden_qtd' name="hidden_qtd" value="" />
+
+            <i id='icone_voltar' class="mdi mdi-chevron-double-left blockRaspadinhaBotaoVoltar"></i>
+            <div id="conjuntoBolasA" style="display: inline-block;padding: 0px 12px 0px 12px;">
+              <i id='icone_bolaA1' class="mdi mdi-numeric-1-circle blockRaspadinha_bulletSelecionada"
+                style="display: none;"></i>
+              <i id='icone_bolaA2' class="mdi mdi-numeric-1-circle-outline blockRaspadinha_bulletSelecionada"></i>
+            </div>
+            <div id="conjuntoBolasB" style="display: inline-block;padding: 0px 12px 0px 12px;">
+              <i id='icone_bolaB1' class="mdi mdi-numeric-2-circle blockRaspadinha_bullet" style="display: none;"></i>
+              <i id='icone_bolaB2' class="mdi mdi-numeric-2-circle-outline blockRaspadinha_bullet"
+                style="display: none;"></i>
+            </div>
+            <div id="conjuntoBolasC" style="display: inline-block;padding: 0px 12px 0px 12px;">
+              <i id='icone_bolaC1' class="mdi mdi-numeric-3-circle blockRaspadinha_bullet" style="display: none;"></i>
+              <i id='icone_bolaC2' class="mdi mdi-numeric-3-circle-outline blockRaspadinha_bullet"
+                style="display: none;"></i>
+            </div>
+
+            <i id='icone_avancar' class="mdi mdi-chevron-double-right blockRaspadinhaBotaoAvancar"></i>
+
+          </div>
+          <!--  Suporte Whastapp -->
+          <div class="row" style="justify-content: center; margin-top: 10px;">
+            <div style="text-align: center;justify-content: center !important;font-size: 1.5;">
+              <span>Caso seja premiado, o valor do prêmio será adicionado como saldo na sua conta do SUPERCAP</span>
+              <a id='Rasp_3WA' class="link external" target="_blank"
+                href="https://wa.me/xxxx/?text=Ola%2c+preciso+de+ajuda+com+a+raspadinha"
+                style="margin-bottom: 16px !important;">
+                <br><br><span>Para falar com nosso suporte, clique aqui &nbsp<i
+                    class="mdi mdi-whatsapp color-azul"></i></span>
+              </a>
+            </div>
+          </div> <!-- Fim  Suporte Whastapp -->
+
+
+        </div>
+      </div>
+    </div> <!-- FIM POP UP RASPADINHA -->
+
+  </div> <!-- FIM Page, "data-name" contains page name -->
+</div> <!-- FIM view view-main -->

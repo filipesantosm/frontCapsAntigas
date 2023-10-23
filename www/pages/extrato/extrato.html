@@ -1,0 +1,146 @@
+<!-- Initial Page, "data-name" contains page name -->
+<div data-name="extrato" class="page">
+  <!-- Top Navbar -->
+  <div id="homeNav" class="navbar no-shadow">
+    <div class="navbar-bg">
+      <!-- transparent !important; -->
+      <img eda-src="dadosComum.statusbar" class="imgStatusBar" src="img/menu/statusbar.png">
+    </div>
+    <div class="navbar-inner sliding">
+      <a id="voltar" href="/informacoes/">
+        <img class="title img-voltar-menu-gif" src="img/selecionarcap/voltar.gif" style="z-index: 1;">
+      </a>
+      <div class="title-center titulo_principal" eda-text="dadosComum.titulo"></div>
+    </div>
+  </div><!-- FIM: Top Navbar -->
+  <!-- FAIXA OFFLINE -->
+  <div class="FaixaOffline" id="FaixaOffline" style="display: none;">Você está Sem internet..</div>
+
+  <!-- Pagina do Aplicativo Scrollable pag-->
+  <div class="page-content ptr-content page-background">
+
+    <!-- BOTOES EXTRATO -->
+    <div class="botoesExtrato">
+      <div class="row">
+        <div class="col">
+          <a class="col-40 button extrato-tab extrato-tab_Ativo" href="#tab-cartao" name="btn_extrato">
+            <i class="mdi mdi-credit-card extrato-icones"
+              style="font-size: 1.8em;vertical-align: -webkit-baseline-middle;">
+            </i>
+            <span class="span-TextButtonExtrato">CARTÃO/PIX</span>
+          </a>
+        </div>
+        <div class="col">
+          <a class="col-40 button extrato-tab extrato-tab_inAtivo" href="#tab-boleto" name="btn_extrato">
+            <i class="mdi mdi-barcode extrato-icones" style="font-size: 1.8em;vertical-align: -webkit-baseline-middle;">
+            </i>
+            <span class="span-TextButtonExtrato">BOLETO/SALDO</span>
+          </a>
+        </div>
+      </div>
+    </div> <!-- BOTOES EXTRATO -->
+
+    <!-- TABS -->
+    <div class="tabs">
+      <!-- Histórico pagamento no CARTAO -->
+
+      <div id="tab-cartao" class="tab tab-active">
+        <!-- CARD CARTAO CREDITO - MSG SEM TITULOS -->
+        <div id="cardSemTitulos-cartao" class="card block-strong inset block-pg-metodo"
+          style="margin-top: 20px;; margin-bottom: 10px !important; display: none;">
+          <div class="block-title titulo-card-pagamento">Observação</div>
+          <div class="card-content card-content-padding" style="padding-top: 4px;padding-bottom: 4px">
+            <p style="text-align: center;" eda-text="pages.extrato.msgSemHistorico1"></p>
+          </div>
+        </div><!-- FIM CARD CARTAO CREDITO - MSG SEM TITULOS -->
+        
+        <!-- CARD CARTAO CREDITO - TITULO -->
+        <div id="card-cartao" class="card">
+          <div class="block-title titulo-card-pagamento">Histórico de compras<br>cartão de crédito</div>
+          <div
+            style="text-align: left !important; padding-left: 8px;padding-right: 8px;font-size: 0.9em;padding-bottom: 6px;">
+            Histórico de compras realizadas com cartão de crédito nos últimos 4 meses.<br>
+            Caso necessite consultar um prazo maior, favor entrar em contato com a central de atendimento.
+          </div>
+        </div><!-- FIM CARD CREDITO CARTAO - TITULO -->
+
+        <div class="card" id="detExtratoCartao">
+          <!-- CARD CARTAO CREDITO/DEBITO - EXTRATO -->
+          <div id='extrato-cartao' class="block extrato-cartao">
+            <!-- EXTRATO SERÀ ADICIONADO AQUI -->
+          </div> <!-- FIM CARD CARTAO CREDITO - EXTRATO -->
+        </div> <!-- FIM CARD CARD-->
+
+      </div><!-- FIM Histórico pagamento no CARTAO -->
+
+      <!-- Histórico pagamento em BOLETO-->
+      <div id="tab-boleto" class="tab">
+        <!-- CARD BOLETO - MSG SEM TITULOS -->
+        <div id="cardSemTitulos-boleto" class="card block-strong inset block-pg-metodo"
+          style="margin-top: 20px; margin-bottom: 10px !important; display: none;">
+          <div class="block-title titulo-card-pagamento">Observação</div>
+          <div class="card-content card-content-padding" style="padding-top: 4px;padding-bottom: 4px">
+            <p style="text-align: center;" eda-text="pages.extrato.msgSemHistorico2"></p>
+          </div>
+        </div><!-- FIM CARD BOLETO - MSG SEM TITULOS -->
+        <!-- CARD BOLETO - TITULO -->
+        <div id="card-boleto" class="card">
+          <div class="block-title titulo-card-pagamento">
+            Histórico de compras<br>Boleto e Saldo
+          </div>
+          <div
+            style="text-align: left !important; padding-left: 8px;padding-right: 8px;font-size: 0.9em;padding-bottom: 6px;">
+            Histórico de crédito realizado mediante pagamento de boleto e compras realizadas utilizando o saldo
+            disponível.<br>
+            Caso necessite consultar um prazo maior, favor entrar em contato com a central de atendimento.
+          </div>
+        </div><!-- FIM CARD BOLETO - TITULO -->
+        <!-- CARD SALDO -->
+        <div id="card-extrato-saldo" class="card" style="margin-top: 8px;">
+          <div class="block-title titulo-card-pagamento">Saldo</div>
+          <div class="list">
+            <ul>
+              <li>
+                <div class="item-content">
+                  <div class="item-inner">
+                    <div class="item-title" style="Font-size: 0.9rem;">Saldo Disponível:</div>
+                    <div class="item-after"><span id='saldo_usuario_extrato' style="Font-size: 1rem;"
+                        class="badge vermelhoBG"></span>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li>
+                <div class="item-content">
+                  <div class="item-inner">
+                    <div class="item-title" style="Font-size: 0.9rem;">Pendente<br> (Boleto em Aberto):</div>
+                    <div class="item-after"><span id='valor_boleto_pendente_extrato' style="Font-size: 1rem;"
+                        class="badge color-gray"></span>
+                    </div>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div><!-- FIM CARD CREDITO CARTAO - TITULO -->
+        <!-- CARD BOLETO - EXTRATO 
+        
+        Alinhamento centralizado do cab
+        .navbar a {
+          /* color: var(--cor_1_fonte); */
+          /* padding: 10px; */
+        }
+        
+        ver a classe extrato-boleto que tem um padding top elevado
+        -->
+
+        <div class="card" id="detExtratoBoleto">
+          <div id='extrato-boleto' class="block extrato-boleto">
+            <!-- EXTRATO SERÀ ADICIONADO AQUI -->
+          </div><!-- FIM CARD BOLETO - EXTRATO -->
+        </div><!-- FIM CARD  EXTRATO -->
+      </div> <!-- fim Histórico pagamento em BOLETO-->
+
+    </div><!-- FIM TABS -->
+  </div><!-- FIM DIV PAGE CONTENT -->
+</div> <!-- FIM Page, "data-name" contains page name -->

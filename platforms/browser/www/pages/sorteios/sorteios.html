@@ -1,0 +1,43 @@
+<!-- Initial Page, "data-name" contains page name -->
+<div data-name="sorteios" class="page">
+  <!-- Top Navbar -->
+  <div id="homeNav" class="navbar no-shadow">
+    <div class="navbar-bg">
+      <!-- transparent !important; -->
+      <img eda-src="dadosComum.statusbar" class="imgStatusBar" src="img/menu/statusbar.png">
+    </div>
+    <div class="navbar-inner sliding">
+      <a id="voltar" href="/informacoes/">
+        <img class="title img-voltar-menu-gif" src="img/selecionarcap/voltar.gif">
+      </a>
+      <div class="title-center titulo_principal" eda-text="dadosComum.titulo"></div>
+    </div>
+  </div><!-- FIM: Top Navbar -->
+
+  <!-- FAIXA OFFLINE -->
+  <div class="FaixaOffline" id="FaixaOffline" style="display: none;">Você está Sem internet..</div>
+
+  <!-- Pagina do Aplicativo Scrollable pages-->
+  <div class="page-content ptr-content page-background">
+
+    <div class="block blog-block block-sorteios" style="margin-bottom:0px">
+      <!-- JQUERY ADICIONA AS CARTELAS AQUI -->
+      <div id="addSorteios" class="addSorteios"></div><!-- cartelas -->
+    </div>
+
+    <div id="block-btn-adicionar" class="block row" style="justify-content: center !important; margin-top:0px">
+      <button id="btn-adicionar" class="col button button-card button-raised button-round botao_cor_1"> +
+        Sorteios Anteriores
+      </button>
+    </div>
+
+    <!-- MSG FINAL SORTEIOS -->
+    <div id="cardFim" class="card block-strong inset block-pg-metodo" style="display: none; margin-top:0px">
+      <div class="block-title titulo-card-pagamento">Histórico de Sorteios</div>
+      <div class="card-content card-content-padding" style="padding-top: 4px;padding-bottom: 4px">
+        <p style="text-align: center;" eda-html="pages.sorteios.sortAnteriores"></p>
+      </div>
+    </div><!-- MSG Final Sorteios -->
+
+  </div><!-- FIM page-content -->
+</div> <!-- FIM Page, "data-name" contains page name -->

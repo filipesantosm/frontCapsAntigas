@@ -1,0 +1,231 @@
+<!-- WELCOME MODELO 1 MULTI  -->
+
+<!-- Initial Page, "data-name" contains page name -->
+<div data-name="welcome" class="page">
+  <!-- Top Navbar -->
+  <div id="homeNav" class="navbar no-shadow">
+    <div class="navbar-bg">
+      <!-- transparent !important; -->
+      <img eda-src="dadosComum.statusbar" class="imgStatusBar" src="img/menu/statusbar.png">
+    </div>
+    <div class="navbar-inner sliding">
+      <div class="title-center titulo_principal" eda-text="dadosComum.titulo"></div>
+    </div>
+  </div><!-- FIM: Top Navbar -->
+
+  <!-- FAIXA OFFILINE -->
+  <div class="FaixaOffline" id="FaixaOffline" style="display: none;">Você está Sem internet..</div>
+
+  <!-- Pagina do Aplicativo Scrollable pag-->
+  <div id='WWAPP_page-content' class="page-content ptr-content page-background">
+    <!-- Push para atualziar -->
+    <div class="ptr-preloader">
+      <div class="preloader"></div>
+      <div class="ptr-arrow"></div>
+    </div> <!-- FIM Push para atualizar -->
+
+    <!-- DIV IMAGEM FALTA POUCO-->
+    <div id='WWAPP_div_falta_pouco' class="card falta-pouco" style="display: none;"></div>
+
+    <!-- MSG SEM OBSERVACOES -->
+    <div id="WWAPP_cardObsSemSorteio" class="card block-strong inset block-pg-metodo">
+      <div class="block-title titulo-card-home-info">AGUARDE !</div>
+      <div class="card-content card-content-padding" style="padding-top: 4px;padding-bottom: 4px">
+        <p style="text-align: center;">
+          Próximo sorteios estará disponível em breve!
+        </p>
+      </div>
+    </div><!-- MSG FIM SEM OBSERVACOES -->
+
+    <!--PRODUTOS -->
+    <div id="WWAPP_div_produtos">
+      <div id="WWAPP_sel_produtos" class="card block-strong inset block-pg-metodo"
+        style="padding-bottom: 1px !important;">
+        <div class="block-title titulo-card-home-info" eda-html="pages.welcome.tituloOpcoes"></div>
+        <div class="list" style="padding-top: 0px; padding-bottom: 0px; margin:0; width: 100% !important;">
+          <p class="segmented segmented-round">
+            <button id="WWAPP_sel_produto_1" value="" name="WWAPP_sel_produto"
+              class="button button-round button-outline valor-boleto segmentoMultiProduto_1_active">
+              <!--
+              <span class="botoes-pagamento" eda-html="pages.welcome.textoOp1"></span>
+              <span id="WWAPP_dataOp1" eda-showHide="pages.welcome.dataOp1"></span>
+              -->
+              <span id="WWAPP_label1_s" class="botoes-pagamento"></span>
+              <span id="WWAPP_label2_s" class="botoes-pagamento"></span>
+
+            </button>
+
+            <button id="WWAPP_sel_produto_2" value="" name="WWAPP_sel_produto"
+              class="button button-round button-outline valor-boleto segmentoMultiProduto">
+              <!--
+              <span class="botoes-pagamento" eda-html="pages.welcome.textoOp2"></span>
+              <span id="WWAPP_dataOp2" eda-showHide="pages.welcome.dataOp2"><br></span>
+              -->
+              <span id="WWAPP_label1_sm" class="botoes-pagamento"></span>
+              <span id="WWAPP_label2_sm" class="botoes-pagamento"></span>
+            </button>
+
+            <button id="WWAPP_sel_produto_3" value="" name="WWAPP_sel_produto"
+              class="button button-round button-outline valor-boleto segmentoMultiProduto">
+              <!--
+              <span class="botoes-pagamento" eda-html="pages.welcome.textoOp3"></span>
+              <span id="WWAPP_dataOp3" eda-showHide="pages.welcome.dataOp3"></span>
+              -->
+              <span id="WWAPP_label1_se" class="botoes-pagamento"></span>
+              <span id="WWAPP_label2_se" class="botoes-pagamento"></span>
+
+            </button>
+          </p>
+        </div>
+      </div>
+    </div><!-- FIM DIV PRODUTOS-->
+
+    <!-- BANNER PRODUTOS-->
+    <div id="WWAPP_banner_produtos" class="card banner_produtos">
+
+      <div id="WWAPP_cardProduto1">
+        <div id='WWAPP_bannerCardProduto1'
+          class="card-header align-items-flex-end banner_produtos_popup bannerCardProdutoMulti bannerCardProdutoMulti_1"
+          baner_titulo=""><span></span>
+        </div>
+        <div class="tituloBanner" id="WWAPP_TituloBannerProduto1"></div>
+        <div class="card-content card-content-padding" style="padding: 4px;margin-top: 4px;">
+          <p id="WWAPP_valorOp1" style="text-align: center; margin: 0px; padding: 0px;"
+            class="titulo-card-login titulo_card_produto1">
+          </p>
+          <p id="WWAPP_dataSorteioOp1" style="text-align: center; margin: 0px; padding: 0px;"></p>
+        </div>
+      </div>
+
+      <div id="WWAPP_cardProduto2" style="display: none;">
+        <div id='WWAPP_bannerCardProduto2'
+          class="card-header align-items-flex-end banner_produtos_popup bannerCardProdutoMulti bannerCardProdutoMulti_2"
+          baner_titulo=""><span></span>
+        </div>
+        <div class="tituloBanner" id="WWAPP_TituloBannerProduto2"></div>
+        <div class="card-content card-content-padding" style="padding: 4px;margin-top: 4px;">
+          <p id="WWAPP_valorOp2" style="text-align: center; margin: 0px; padding: 0px;"
+            class="titulo-card-login titulo_card_produto2">
+          </p>
+          <p id="WWAPP_dataSorteioOp2" style="text-align: center; margin: 0px; padding: 0px;"></p>
+        </div>
+      </div>
+
+      <div id="WWAPP_cardProduto3" style="display: none;">
+        <div id='WWAPP_bannerCardProduto3'
+          class="card-header align-items-flex-end banner_produtos_popup bannerCardProdutoMulti bannerCardProdutoMulti_3"
+          baner_titulo=""><span></span>
+        </div>
+        <div class="tituloBanner" id="WWAPP_TituloBannerProduto3"></div>
+        <div class="card-content card-content-padding" style="padding: 4px;margin-top: 4px;">
+          <p id="WWAPP_valorOp3" style="text-align: center; margin: 0px; padding: 0px;"
+            class="titulo-card-login titulo_card_produto3">
+          </p>
+          <p id="WWAPP_dataSorteioOp3" style="text-align: center; margin: 0px; padding: 0px;"></p>
+        </div>
+      </div>
+
+      <!-- Relogio regressivo-->
+      <div class="block relogio" id="WWAPP_relogio" style="display: none !important;">
+        <div class="clock" style="margin:Inherited;"></div>
+        <div class="message" style="display: none;"></div>
+        <!--FIM TABLE Relogio regressivo -->
+      </div>
+      <!--FIM DIV Relogio regressivo -->
+    </div> <!-- FIM BANNER PRODUTOS-->
+
+    <!-- LOGIN / CADASTRO-->
+    <div id='WWAPP_div_efetuarLogin' class="card border_animated"
+      style="margin-top: 8px;padding-bottom: 10px;text-align: center;">
+      <div class="block-title titulo-card-home-info" style="margin: 1px; ">Participe</div>
+      <span style="padding: 2px 6px 2px 6px;">Cadastre agora! <br>Se já possui cadastro, clique em entrar !<br></span>
+      <p class="block row" style="justify-content: center !important;">
+        <button id='WWAPP_btn_login' style="max-width: 270px !important;margin: 6px !important;"
+          class="col button button-card button-big button-fill button-round botao_cor_2 pulse_infinite">Cadastrar /
+          Entrar
+        </button>
+      </p>
+    </div> <!-- FIM LOGIN / CADASTRO-->
+
+    <!--CARD Cessão de resgate -->
+    <div id="WWAPP_block_cessaoResgate" class="card" style="padding-bottom: 10px;"
+      eda-showHide="pages.welcome.cardCessaoResgate">
+      <div class="block-title titulo-card-home-info">Cessão de resgate</div>
+      <div class="card-home-info" eda-text="pages.welcome.cessaoResgate"></div>
+      <img eda-src="pages.welcome.logo_instituicao" id="pages.welcome.logo_instituicao"
+        src="img/instituicoes/logo_instituicao.png" style="height: 64px;display: block;margin: 0 auto;">
+    </div> <!-- FIM CARD Cessão de resgate -->
+
+    <!--CARD INFO -->
+    <div id="WWAPP_block_info" class="card" style="padding-bottom: 10px;">
+      <div class="block-title titulo-card-home-info" eda-html="pages.welcome.cardTituloInfo"></div>
+      <div class="card-home-info">
+        <p class="p-margin" eda-text="dadosComum.logradouro"></p>
+        <p class="p-margin">
+          <span eda-text="dadosComum.bairro"></span><span>,</span>
+          <span eda-text="dadosComum.cidade"></span><span> - </span>
+          <span eda-text="dadosComum.uf"></span><span> - </span>
+          <span eda-text="dadosComum.cep"></span>
+        </p>
+        </br>
+        <p class="p-margin" eda-html="dadosComum.centralAtendimento"></p>
+        <p id='WWAPP_html_capitalizadora'></p>
+        <img eda-src="pages.welcome.img_capitalizadora" id='WWAPP_img_capitalizadora'
+          src="img/home/logo_captalizadora_150.png" style="height: 100px;display: block;margin: 0 auto;">
+      </div>
+    </div><!-- FIM CARD INFO-->
+
+    <!--CARD DESENVILVIMENTO -->
+    <div id="WWAPP_dev_welcome" class="card card-copyright">
+      <div class="row">
+        <div class='copyright-dev'><span id='login-desenvolidoPor'></span></div>
+        <div class='copyright-versao'><span id='login-versaoAPP'></span></div>
+      </div>
+    </div><!-- FIM CARD DESENVILVIMENTO-->
+
+    <!-- popup captcha -->
+    <div id='id_actions_Captcha' class="popup popup-captcha" data-close-By-Backdrop-Click="false">
+      <div class="block block-action-captcha">
+        <div class="block-title titulo-card-home-info">Para sua segurança<br>Informe o número da imagem abaixo:</div>
+        <i class="mdi mdi-close-circle color_cor_1 action-captcha-btn-fechar link actions-close"></i>
+        <div class="list inline-labels no-hairlines-md" style="margin-top: 2px; margin-bottom: 2px;">
+          <ul>
+            <input type="hidden" id='hidden_popup_acao' name="hidden_popup_acao" value="" />
+            <input type="hidden" id='hidden_popup_cpf' name="hidden_popup_cpf" value="" />
+          </ul>
+          <ul>
+            <li>
+              <div class="item-content">
+                <div class="item-inner">
+                  <input type="tel" id="captchaNum" placeholder="0-0-0-0" class="span-TextButton inputCaptcha">
+                  <div class="item-after" style="width: 50%;">
+                    <button id="btn-ValidaCapctha"
+                      class="col button button-card button-big button-fill button-round botao_cor_1">Validar
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </li>
+          </ul>
+          <ul>
+            <li class="liBoxCaptcha">
+              <iframe id='iframe_captcha' src="" title="description" class="iframeCaptcha">
+              </iframe>
+            </li>
+          </ul>
+          <div class="row" style="justify-content: center; text-align: -webkit-center; text-align: -moz-center;">
+            <a id='welcome_suporteWA' class="link external" target="_blank" href="https://wa.me/XXXXXX/?text=Ola"
+              style="color:#23458b; font-weight: bold;">
+              <span style="font-size: 0.8em; padding-top: 6px;">
+                Se estiver com dificuldades, clique aqui &nbsp<i class="mdi mdi-whatsapp text-color-green"></i>
+              </span>
+            </a>
+          </div>
+          <div class="row"></div>
+
+        </div>
+      </div>
+    </div>
+
+  </div><!-- FIM page-content-->
+</div><!-- FIM data-name/page-->
