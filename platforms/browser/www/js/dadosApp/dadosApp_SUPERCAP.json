@@ -1,0 +1,97 @@
+{
+  "dadosComum": {
+    "empresa": "SUPERCAP PAULISTA",
+    "empresa_abreviada": "SUPERCAP",
+    "empresa_cnpj": "21.825.829/0001-01",
+    "titulo": "SUPERCAP PAULISTA",
+    "logradouro": "Rua Horácio Cenci, nº 75 - Ed. West Point, 10º Andar",
+    "bairro": "PQ. Campolim Sorocaba",
+    "cidade": "Sorocaba",
+    "uf": "SP",
+    "cep": "18047-800",
+    "centralAtendimento": "Central de Atendimento: faleconosco@supercapsp.com.br <br> (15) 3035.2699",
+    "linkPoliticaPrivacidade": "https://supercapsp.com.br/politica-de-privacidade-app",
+    "linkPoliticaCapitalizadora": "https://kovr.com.br/produtos/politica-de-protecao-de-dados/",
+    "premioExtra": "Prêmio Extra",
+    "statusbar": "padrao"
+  },
+  "rodape": {
+    "rodape1": "COMPRAR",
+    "rodape2": "GANHADORES",
+    "rodape3": "MEUS TITULOS",
+    "rodape4": "MAIS"
+  },
+  "variaveis": {
+    "nomeCapitalizadora": "KOVR",
+    "dialogMsgContribuicao": "ATENÇÃO: Se você discordar com a cessão, você não ajudará ao BOS. Neste caso, você deverá solicitar o seu resgate através do site https://www.kovr.com.br, seguindo os procedimentos ali descritos.",
+    "textoPopUpCapitalizadora": "A KOVR atualizou sua política de uso e proteção de dados.<br><br>Li e estou de acordo com a <br><a href='https://kovr.com.br/produtos/politica-de-protecao-de-dados'",
+    "habilitarPopupCapitalizadora": "s"
+  },
+  "pages": {
+    "welcome": {
+      "cessaoResgate": "Você pode ajudar a BOS, comprando o SUPERCAP PAULISTA e cedendo o direito de resgate.",
+      "cardCessaoResgate": "ocultar",
+      "cardTituloInfo": "SUPERCAP PAULISTA<br>Título de Capitalização",
+      "produto_1_titulo": "TITULO DE CAPITALIZAÇÂO",
+      "logo_instituicao": "padrao",
+      "img_capitalizadora": "ocultar",
+      "tituloOpcoes": "NESTA SEMANA<br>MAIS OPÇÕES DE TITULOS !"
+    },
+    "home": {
+      "textoCarteira": "Informe o valor que deseja adicionar à carteira SUPERCAP PAULISTA",
+      "boletoAtencao": "Os Títulos da SUPERCAP PAULISTA não são vendidos por boleto. O boleto é utilizado somente para adicionar saldo ao aplicativo.<br></br>A compensação de boletos bancários acontece somente em dias úteis e pode demorar até 72hs para o banco confirmar para o SUPERCAP PAULISTA o recebimento",
+      "boletoAtencao_parte1":"Os Títulos da SUPERCAP PAULISTA não são vendidos por boleto. O boleto é utilizado somente para adicionar saldo ao aplicativo",
+      "boletoRazaoSocial": "Boleto gerado em nome da Razão Social da SUPERCAP PAULISTA: <br>MRW PARTICIPAÇÕES.",
+      "cessaoResgate": "Você pode ajudar a BOS, comprando o SUPERCAP PAULISTA e cedendo o direito de resgate.",
+      "cardCessaoResgate": "ocultar",
+      "cardTituloInfo": "SUPERCAP PAULISTA<br>Título de Capitalização",
+      "produto_1_titulo": "TITULO DE CAPITALIZAÇÂO",
+      "logo_instituicao": "padrao",
+      "img_capitalizadora": "padrao",
+      "tituloOpcoes": "NESTA SEMANA<br>MAIS OPÇÕES DE TITULOS !"
+    },
+    "cad_p3": {
+      "politicaCapitalizadora": "política de proteção de dados da KOVR",
+      "li_PoliticaCapitalizadora": "mostrar"
+    },
+    "sorteios": {
+      "sortAnteriores": "Entre em nosso site www.supercapsp.com.br <br> para visualizar os sorteios anteriores"
+    },
+    "login": {
+      "brasao": "ocultar",
+      "mascote": "padrao"
+    },
+    "meustitulos": {
+      "msgSemHistorico": "Para o sorteio em aberto, não localizamos seu histórico de compra(s) no SUPERCAP PAULISTA",
+      "msgSemCompraZerada": "Não localizamos seu histórico de compra(s) no SUPERCAP PAULISTA.",
+      "agradecimentoContribuicao": "Obrigado por contribuir com o BOS.",
+      "logo_instituicao": "padrao"
+    },
+    "extrato": {
+      "msgSemHistorico1": "Não foi possivel localizar seu histórico de compra(s) no SUPERCAP PAULISTA.",
+      "msgSemHistorico2": "Não foi possivel localizar seu histórico de compras(s) no SUPERCAP PAULISTA."
+    },
+    "comofunciona": {
+      "msgVideo": "Veja o video abaixo como é fácil utilizar o aplicativo e já começar a comprar seu SUPERCAP PAULISTA !"
+    },
+    "resultadosanteriores": {
+      "iframeLink": "https://www.supercapsp.com.br/resultadosapp/"
+    },
+    "carrinho": {
+      "msgContribuicao": "Desejo ajudar a BOS - CNPJ 50.795.566/0013-69 com a cessão de parte do valor do meu Título. ",
+      "saldoCarteira": "Saldo da Carteira SUPERCAP PAULISTA",
+      "pixMensagem": "PIX gerado em nome da Razão Social da SUPERCAP PAULISTA: MRW PARTICIPAÇÕES.",
+      "condicoesGerais": " Li e concordo com as Condições Gerais ",
+      "cardCessaoResgate": "ocultar"
+    },
+    "comprarsaldo": {
+      "textoCarteira": "Informe o valor que deseja adicionar à carteira SUPERCAP PAULISTA",
+      "boletoAtencao1": "Os Títulos da SUPERCAP PAULISTA não são vendidos por boleto. <br> O boleto é utilizado somente para adicionar saldo ao aplicativo.<br> O valor da compra será creditado em saldo na plataforma, após compensado pelo banco.",
+      "boletoAtencao2": "A compensação de boletos bancários acontece somente em dias úteis e pode demorar até 72hs para o banco confirmar para o SUPERCAP PAULISTA o recebimento.",
+      "boletoRazaoSocial": "Boleto gerado em nome da Razão Social da SUPERCAP PAULISTA:<br> MRW PARTICIPAÇÕES."
+    },
+    "informacoes": {
+      "li_CidadesAtendidas": "mostrar"
+    }
+  }
+}

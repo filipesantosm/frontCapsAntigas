@@ -49,7 +49,7 @@ let codigo_crip = "";
 let EFI_PayeeCode = "1e154ffe3333e28a4763edaadf9bb689"; // Codigo Gerencianet/EFI
 let EFI_Sandbox = true; // HOMOLOGAÇÂO = TRUE // PRODUCAO = FALSE
 
-var servidor = "https://ipa.newsupercapsp.com.br";
+var servidor = "https://ipa2.newmaracap.com.br";
 
 var emailSuporte = "atendimento@supercap.com.br";
 var NomeEmpresa = "SUPERCAP";
