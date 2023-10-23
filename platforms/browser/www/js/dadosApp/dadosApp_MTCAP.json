@@ -1,0 +1,86 @@
+{
+  "dadosComum": {
+    "empresa": "CRP PUBLICIDADE E PROPAGANDA LTDA",
+    "empresa_abreviada": "MTCAP",
+    "empresa_cnpj": "34.825.010/0001-88",
+    "titulo": "MTCAP",
+    "logradouro": "Av. Historiador Rubens de Mendonça, 2368",
+    "bairro": "Bosque da Saude",
+    "cidade": "Cuiabá",
+    "uf": "MT",
+    "cep": "78050-000",
+    "centralAtendimento": "Central de Atendimento: faleconosco@mtcap.com.br <br> (65) 3055.1100",
+    "linkPoliticaPrivacidade": "https://newmtcap.com.br/politica-de-privacidade-app",
+    "linkPoliticaCapitalizadora": "https://portaldeprivacidade.capemisa.com.br",
+    "premioExtra": "Prêmio Extra",
+    "statusbar": "padrao"
+  },
+  "rodape": {
+    "rodape1": "COMPRAR",
+    "rodape2": "GANHADORES",
+    "rodape3": "MEUS TITULOS",
+    "rodape4": "MAIS"
+  },
+  "variaveis": {
+    "nomeCapitalizadora": "Capemisa",
+    "dialogMsgContribuicao": "ATENÇÃO: Se você discordar com a cessão, você não ajudará APAE Brasil. Neste caso, você deverá solicitar o seu resgate através do site https://www.capemisa.com.br, seguindo os procedimentos ali descritos.",
+    "textoPopUpCapitalizadora": "A Capemisa atualizou sua política de uso e proteção de dados.<br><br>Li e estou de acordo com a <br><a href='https://portaldeprivacidade.capemisa.com.br'",
+    "habilitarPopupCapitalizadora": "s"
+  },
+  "pages": {
+    "welcome": {
+      "cessaoResgate": "Você pode ajudar a APAE Brasil, comprando o MTCAP e cedendo o direito de resgate.",
+      "cardTituloInfo": "MTCAP<br>Título de Capitalização",
+      "logo_instituicao": "padrao",
+      "img_capitalizadora": "padrao"
+    },
+    "home": {
+      "textoCarteira": "Informe o valor que deseja adicionar à carteira MTCAP",
+      "boletoAtencao": "Os Títulos da MTCAP não são vendidos por boleto. O boleto é utilizado somente para adicionar saldo ao aplicativo.<br></br>A compensação de boletos bancários acontece somente em dias úteis e pode demorar até 72hs para o banco confirmar para o MTCAP o recebimento",
+      "boletoRazaoSocial": "Boleto gerado em nome da Razão Social da MTCAP: <br>CRP Publicidade.",
+      "cessaoResgate": "Você pode ajudar a APAE Brasil, comprando o MTCAP e cedendo o direito de resgate.",
+      "cardTituloInfo": "MTCAP<br>Título de Capitalização",
+      "logo_instituicao": "padrao",
+      "img_capitalizadora": "padrao"
+    },
+    "cad_p3": {
+      "politicaCapitalizadora": "política de proteção de dados da Capemisa",
+      "li_PoliticaCapitalizadora": "mostrar"
+    },
+    "sorteios": {
+      "sortAnteriores": "Entre em nosso site www.mtcap.com.br <br> para visualizar os sorteios anteriores"
+    },
+    "login": {
+      "brasao": "ocultar",
+      "mascote": "padrao"
+    },
+    "meustitulos": {
+      "msgSemHistorico": "Para o sorteio em aberto, não localizamos seu histórico de compra(s) no MTCAP",
+      "msgSemCompraZerada": "Não localizamos seu histórico de compra(s) no MTCAP.",
+      "agradecimentoContribuicao": "Obrigado por contribuir com a APAE Brasil.",
+      "logo_instituicao": "padrao"
+    },
+    "extrato": {
+      "msgSemHistorico1": "Não foi possivel localizar seu histórico de compra(s) no MTCAP.",
+      "msgSemHistorico2": "Não foi possivel localizar seu histórico de compras(s) no MTCAP."
+    },
+    "comofunciona": {
+      "msgVideo": "Veja o video abaixo como é fácil utilizar o aplicativo e já começar a comprar seu MTCAP !"
+    },
+    "resultadosanteriores": {
+      "iframeLink": "https://www.newmtcap.com.br/resultadosapp/"
+    },
+    "carrinho": {
+      "msgContribuicao": "Desejo ajudar a APAE - CNPJ 62.795.566/0001-25 com a cessão de parte do valor do meu Título. ",
+      "saldoCarteira": "Saldo da Carteira MTCAP",
+      "pixMensagem": "PIX gerado em nome da Razão Social da MTCAP: CRP Publicidade.",
+      "condicoesGerais": " Li e concordo com as Condições Gerais "
+    },
+    "comprarsaldo": {
+      "textoCarteira": "Informe o valor que deseja adicionar à carteira MTCAP",
+      "boletoAtencao1": "Os Títulos da MTCAP não são vendidos por boleto. <br> O boleto é utilizado somente para adicionar saldo ao aplicativo.<br> O valor da compra será creditado em saldo na plataforma, após compensado pelo banco.",
+      "boletoAtencao2": "A compensação de boletos bancários acontece somente em dias úteis e pode demorar até 72hs para o banco confirmar para o MTCAP o recebimento.",
+      "boletoRazaoSocial": "Boleto gerado em nome da Razão Social da MTCAP:<br> CRP Publicidade."
+    }
+  }
+}
