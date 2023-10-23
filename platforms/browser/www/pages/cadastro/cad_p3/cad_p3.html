@@ -1,0 +1,111 @@
+<!-- Initial Page, "data-name" contains page name -->
+<div data-name="cad_p3" class="page page-cadastro">
+  <!-- Scrollable page content -->
+  <div class="page-content">
+    <center>
+      <h2 style="color:#ffffff;margin-bottom: 8px;">Última etapa do Cadastro</h2>
+      <h3 style="color:#ffffff;margin-bottom: 4px;margin-top: 4px;"></h3>
+    </center>
+    <div id="CadastroComInternet">
+      <form id="form_cadastrop3">
+        <!-- class="div-formulario-cadastro" -->
+        <div class="list inset list-cadastro">
+          <ul class="ui-form-cadastro form-cadastro">
+            <div class="block-title titulo-card-pagamento" style="padding-top: 20px !important;">CADASTRE SUA NOVA
+              SENHA<br>(somente números)
+            </div>
+
+            <li id="li_cad_pass_web" style="text-align: -webkit-center;text-align: -moz-center; display: none;">
+              <div class="dialog-input-field item-input item-input-with-value"
+                style="place-content: center; width: 80%;">
+                <div class="item-input-wrap">
+                  <input id="cad_PinCodeLogin_web" style='border-bottom: none !important;' 
+                    class="senhaCap dialog-input dialog-input-font input-with-value"
+                    type="password" pattern="[0-9]*" maxlength="6" autocomplete="off" placeholder="* * * * * *">
+                  <div class="password-icone">
+                    <i style="font-size: 25px !important; float: right;" id="cad_pass_show_web"
+                      class="mdi mdi-eye-check-outline color-azul"></i>
+                    <i style="font-size: 25px !important; float: right;display: none;" id="cad_pass_hide_web"
+                      class="mdi mdi-eye-off-outline color-azul"></i>
+                  </div>
+                </div>
+                <span style="color: #ff0000;">Senha numérica de 6 dígitos</span>
+              </div>
+            </li>
+
+            <li id="li_cad_pass_app" style="text-align: -webkit-center;text-align: -moz-center;">
+              <div class="dialog-input-field item-input item-input-with-value"
+                style="place-content: center; width: 80%;">
+                <div class="item-input-wrap">
+                  <input id="cad_PinCodeLogin_app" style='border-bottom: none !important;' 
+                    class="password-mascara senhaCap dialog-input dialog-input-font input-with-value" type="tel"
+                    maxlength="6" autocomplete="off" placeholder="* * * * * *">
+                  <div class="password-icone">
+                    <i style="font-size: 26px !important; float: right;" id="cad_pass_show_app"
+                      class="mdi mdi-eye-check-outline color-azul"></i>
+                    <i style="font-size: 26px !important; float: right;display: none;" id="cad_pass_hide_app"
+                      class="mdi mdi-eye-off-outline color-azul"></i>
+                  </div>
+                </div>
+                <span style="color: #ff0000;">Senha numérica de 6 dígitos</span>
+              </div>
+            </li>
+            <br>
+            <li class="item-content item-input" style="justify-content: start !important;">
+              <div class="col-15">
+                <label class="checkbox botao_cor_1" style="font-size: 0.rem;">
+                  <input id="CadcheckPolitica" type="checkbox" CHECKED>
+                  <i class="icon-checkbox"></i>
+                </label>
+              </div>
+              <div class="col-85" style="padding-left: 15px;">
+                Li e estou de acordo com a <br><a eda-href="dadosComum.linkPoliticaPrivacidade" href="#"
+                  class="link external" target="_blank"> <u>Política de Privacidade</u></a>
+              </div>
+            </li>
+            <br>
+            <li eda-showHide="pages.cad_p3.li_PoliticaCapitalizadora" class="item-content item-input" style="justify-content: start !important;">
+              <div class="col-15">
+                <label class="checkbox botao_cor_1" style="font-size: 0.rem;">
+                  <input id="CadcheckPoliticaLGPD" type="checkbox" CHECKED>
+                  <i class="icon-checkbox"></i>
+                </label>
+              </div>
+              <div class="col-85" style="padding-left: 15px;">
+                Li e estou de acordo com a <br><a eda-href="dadosComum.linkPoliticaCapitalizadora" href="#"
+                  class="link external" target="_blank"> <u eda-text="pages.cad_p3.politicaCapitalizadora"></u></a>
+              </div>
+            </li>
+            <br>
+            <li class="item-content item-input" style="justify-content: start !important;">
+              <div class="col-15">
+                <label class="checkbox botao_cor_1" style="font-size: 0.9rem;">
+                  <input id="CadcheckTermosContato" type="checkbox" CHECKED>
+                  <i class="icon-checkbox"></i>
+                </label>
+              </div>
+              <div class="col-85" style="padding-left: 15px;">Concordo em receber email e whatsapp publicitário.
+              </div>
+            </li>
+            <br>
+          </ul>
+
+        </div>
+        <div class="row"></div>
+        <p class="block row" style="margin-bottom: 16px !important;font-weight: bold; padding-top: 6px;">
+          <button id="CadcadastraP3"
+            class="col button button-card button-big button-fill button-round botao_cor_2 pulse_infinite">
+            Concluir Cadastro
+          </button>
+        </p>
+        <p style="padding-top: 6px;">
+          <center><a id='cadastro_suporteP2' class="link external" target="_blank"
+              href="https://wa.me/XXXXXX/?text=Ol%c3%a1!+Estou+com+dificuldades+para+efetuar+cadastro+na+tela+P2.+Poderia+me+ajudar%3f"
+              style="color:#ffffff;margin-bottom: 16px !important;">Se estiver com dificuldades, clique aqui &nbsp<i
+                class="mdi mdi-whatsapp text-color-white"></i></a>
+          </center>
+        </p>
+      </form>
+    </div> <!-- FIM CadastroComInternet -->
+  </div> <!-- FIM Page Content" -->
+</div><!-- FIM data-name="cadastro_p1" -->

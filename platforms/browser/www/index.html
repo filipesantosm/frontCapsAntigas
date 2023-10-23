@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+  <meta name="format-detection" content="telephone=no">
+  <meta name="msapplication-tap-highlight" content="no">
+  <meta name="viewport"
+    content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+  <!--viewport-fit=cover-->
+  <link rel="stylesheet" type="text/css" href="css/framework7.bundle.css">
+  <link rel="stylesheet" type="text/css" href="css/capAzulNovo.css">
+  <link rel="stylesheet" type="text/css" href="css/rainbow.css">
+  <link rel="stylesheet" type="text/css" href="css/flipclock.css">
+  <link rel="stylesheet" type="text/css" href="css/stories.css">
+  <link rel="stylesheet" type="text/css" href="css/webapp.css">
+  <link rel="stylesheet" type="text/css" href="css/pix.css">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;1,100;1,200;1,300;1,500&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="css/swiper.css">
+  <link rel="stylesheet" type="text/css" href="css/animate.css">
+  <link rel="stylesheet" type="text/css" href="css/materialdesignicons.css">
+  <link rel="stylesheet" type="text/css" href="css/framework7-icons.css">
+
+  <meta name="color-scheme" content="light dark" />
+  <title eda-text="dadosComum.titulo"></title>
+
+</head>
+
+<body id='body' class="theme-light" style="background-color: #000000;">
+  <div id='web_app_imgcell' class="webapp"></div>
+
+  <!-- IMAGEM DO CELULAR quando WEBAPP-->
+  <!-- App root element -->
+  <div id="app" class='app'>
+
+    <!-- Statusbar overlay -->
+    <div class="statusbar"></div>
+    <!-- Your main view, should have "view-main" class -->
+    <div id='view-main' class="view view-main">
+      <!-- Initial Page, "data-name" contains page name -->
+      <div id='index' data-name="index" class="page bg-welcomeV2">
+        <!-- bg-welcome-mod1 => Modelo 1 ///  bg-welcome-mod2 =>Modelo 2  -->
+        <!-- Scrollable page content -->
+        <!-- Pagina do Aplicativo -->
+        <div class="page-content">
+          <!-- BLOCO PARA ANIMAÇÃO TELA INICIAL MODELO ANTIGO IMAGEM SUBINDO -->
+          <img id="logoInicioV2" class="logoInicio" src="img\index\ic_onesignal_large_icon_default.png"
+            style="display: none;">
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <script>
+    if ((window.location.href.indexOf("mtcap") == -1)
+      && (window.location.href.indexOf("proeste") == -1)
+      && (window.location.href.indexOf("maracap") == -1)
+      && (window.location.href.indexOf("supercap") == -1)
+      && (window.location.href.indexOf("cajucap") == -1)
+      && (window.location.href.indexOf("amapacap") == -1)
+      && (window.location.href.indexOf("localhost:") == -1)
+      && (window.location.href.indexOf("192.") == -1)) {
+      var head = document.getElementsByTagName('head')[0];
+      var js = document.createElement("script");
+      js.type = "text/javascript";
+      js.src = "cordova.js";
+      head.appendChild(js);
+    }
+  </script>
+  <script type="text/javascript" src="js/jquery.js"></script>
+  <script type="text/javascript" src="js/jquery.mask.min.js"></script>
+  <script type="text/javascript" src="js/framework7.bundle.js"></script>
+  <script type="text/javascript" src="js/device-uuid.min.js"></script>
+  <script type="text/javascript" src="js/custom.js"></script>
+  <script type="text/javascript" src="js/relogio/flipclock.min.js"></script>
+  <script type="text/javascript" src="js/relogio/funcoes.js"></script>
+  <script type="text/javascript" src="js/jsencrypt/jsencrypt.min.js"></script>
+  <script type="text/javascript" src="js/my-app.js"></script>
+  <script type="text/javascript" src="js/dadosApp/dadosApp.js"></script>
+  <script type="text/javascript" src="js/card/card.js"></script>
+  <script type="text/javascript" src="js/pagamento/getnet.js"></script>
+  <script type="text/javascript" src="js/pagamento/saldo.js"></script>
+  <script type="text/javascript" src="js/pagamento/efi_head.js"></script>
+  <script type="text/javascript" src="js/pagamento/gerencianet.js"></script>
+  <script type="text/javascript" src="js/scratchcard/wScratchPad.js"></script>
+
+
+</body>
+
+</html>

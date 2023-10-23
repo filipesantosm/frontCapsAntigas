@@ -1,0 +1,119 @@
+<!-- Initial Page, "data-name" contains page name -->
+<div data-name="cad_p1" class="page">
+  <!-- Scrollable page content -->
+  <div class="page-content page-cadastro">
+    <center>
+      <h2 style="color:#ffffff;margin-bottom: 8px;">Novo Cadastro</h2>
+      <h3 style="color:#ffffff;margin-bottom: 4px;margin-top: 4px;">Preencha as informações abaixo.<br>Isso só será
+        feito uma unica vez!</h3>
+    </center>
+    <div id="CadastroComInternet">
+      <!-- class="div-formulario-cadastro"  -->
+      <div class="list inset list-cadastro">
+        <!-- Formulário de Cadastro Pagina 1-->
+        <form id="cadastrop1">
+          <ul class="ui-form-cadastro form-cadastro">
+            <li class="item-content item-input">
+              <div class="item-inner">
+                <div class="item-title item-label campo_formulario">
+                  <span>Nome Completo</span><span class="campo-obrigatorio"> *</span>
+                </div>
+                <div class="item-input-wrap">
+                  <input type="text" id="CadnomeCadastro" maxlength="100" name="nomeCadastro" placeholder="Nome"
+                    autocomplete="name">
+                </div>
+              </div>
+            </li>
+            <li class="item-content item-input">
+              <div class="item-inner">
+                <div class="item-title item-label campo_formulario">
+                  <span>Data de Nascimento</span><span class="campo-obrigatorio"> *</span>
+                </div>
+                <div class="item-input-wrap">
+                  <input type="date" id="CaddatanascimentoCadastroData" placeholder="Selecionar Data"
+                    name="dataNascimentoText" style="display: none;">
+                  <input type="text" id="CaddatanascimentoCadastroTexto" placeholder="Selecionar Data"
+                    name="dataNascimentoData">
+                </div>
+              </div>
+            </li>
+            <li class="item-content item-input">
+              <div class="item-inner">
+                <div class="item-title item-label campo_formulario">
+                  <span>CPF (Login)</span><span class="campo-obrigatorio"> *</span>
+                </div>
+                <div class="item-input-wrap">
+                  <input type="tel" id="CadCPFCadastro" maxlength="14" name="cpf" name="cpf"
+                    placeholder="000.000.000-00" autocomplete="cpf">
+                </div>
+              </div>
+            </li>
+            <li class="item-content item-input">
+              <div class="item-inner">
+                <div class="item-title item-label campo_formulario">E-mail<span class="campo-obrigatorio"> *</span>
+                </div>
+                <div class="item-input-wrap">
+                  <input type="email" id="CademailCadastro" name="emailCadastro" placeholder="Informe um e-mail válido"
+                    autocomplete="email" style="text-transform: lowercase;">
+                </div>
+              </div>
+            </li>
+            <li class="item-content item-input">
+              <div class="item-inner">
+                <div class="item-title item-label campo_formulario">
+                  <span>Sexo / Gênero</span><span class="campo-obrigatorio"> *</span>
+                </div>
+                <div class="item-input-wrap">
+                  <select id="sexogenero" name="sexogenero" autocomplete="off">
+                    <option value="">Selecione</option>
+                    <option value="M">Masculino</option>
+                    <option value="F">Feminino</option>
+                    <option value="NB">Não binário</option>
+                    <option value="OU">Outro</option>
+                    <option value="NI">Prefiro não informar</option>
+                  </select>
+                </div>
+              </div>
+            </li>
+            <li class="item-content item-input">
+              <div class="item-inner">
+                <div class="item-title item-label campo_formulario">
+                  <span>Telefone Celular</span><span class="campo-obrigatorio"> *</span>
+                </div>
+                <div class="item-input-wrap">
+                  <input type="tel" id="CadtelefoneCadastro" maxlength="10" name="Telefone"
+                    placeholder="(xx) xxxxx-xxxx" autocomplete="tel">
+                </div>
+              </div>
+            </li>
+            <div style="height: 35px;">
+              <span class="campo-obrigatorio"
+                style="font-size: 0.8em; padding-left: calc(var(--f7-list-item-padding-horizontal) + var(--f7-safe-area-left));">
+                * Campos obrigatórios</span>
+            </div>
+          </ul>
+        </form>
+      </div>
+      <div class="row"></div>
+      <p id='p_validarTelefone' class="block row" style="padding: 16px 0px 10px 0px !important;font-weight: bold;">
+        <button id="validarTelefone" style="display:none;"
+          class="col button button-card button-big button-fill button-round botao_cor_2 pulse_infinite">
+          Validar Telefone
+        </button>
+      </p>
+      <p id='p_cadcadastraP1' class="block row" style="padding: 16px 0px 10px 0px !important;font-weight: bold;">
+        <button id="CadcadastraP1" style="display:none;"
+          class="col button button-card button-big button-fill button-round botao_cor_2 pulse_infinite">
+          Avançar
+        </button>
+      </p>
+      <p>
+        <center><a id='cadastro_suporteP0' class="link external" target="_blank"
+            href="https://wa.me/XXXXXX/?text=Ol%c3%a1!+Estou+com+dificuldades+para+efetuar+cadastro+na+tela+P0.+Poderia+me+ajudar%3f"
+            style="color:#ffffff;margin-bottom: 16px !important;">Se estiver com dificuldades, clique aqui &nbsp<i
+              class="mdi mdi-whatsapp text-color-white"></i></a>
+        </center>
+      </p>
+    </div>
+  </div>
+</div>

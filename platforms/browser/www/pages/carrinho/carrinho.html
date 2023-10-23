@@ -1,0 +1,703 @@
+<!-- Initial Page, "data-name" contains page name -->
+<div data-name="carrinho" class="page">
+
+  <!-- Top Navbar -->
+  <div id="homeNav" class="navbar no-shadow">
+    <div class="navbar-bg">
+      <!-- transparent !important; -->
+      <img eda-src="dadosComum.statusbar" class="imgStatusBar" src="img/menu/statusbar.png">
+    </div>
+    <div class="navbar-inner sliding">
+      <a id="voltar" href="/home/">
+        <img class="title img-voltar-menu-gif" src="img/selecionarcap/voltar.gif">
+      </a>
+      <div class="title-center titulo_principal" eda-text="dadosComum.titulo"></div>
+    </div>
+  </div><!-- FIM: Top Navbar -->
+
+  <div class="FaixaOffline" id="FaixaOffline" style="display: none;">Você está Sem internet..</div>
+
+  <!-- Pagina do Aplicativo Scrollable pag-->
+  <div class="page-content ptr-content page-background">
+    <!-- TITULAR -->
+    <div class="card block-strong inset block-pg-metodo">
+      <div class="list accordion-list accordion-dados-cadastrais">
+        <ul>
+          <li class="accordion-item">
+            <a href="#" class="item-content item-link">
+              <div class="item-inner">
+                <div class="item-title">Dados Cadastrais</div>
+              </div>
+            </a>
+            <div class="accordion-item-content ">
+              <div class="block">
+                <p><span class="card-itens-pg">Nome: </span>
+                  <span class="card-itens-valores tooltip-init texto_direita_card" id="usuarioNome"
+                    data-tooltip="."></span>
+                </p>
+                <p><span class="card-itens-pg">CPF: </span>
+                  <span class="card-itens-valores texto_direita_card" id="usuarioCPF"></span>
+                </p>
+                <p id="p-email"><span class="card-itens-pg">Email: </span>
+                  <span class="card-itens-valores texto_direita_card" id="usuarioEmail"></span>
+                </p>
+                <p><span class="card-itens-pg">Celular: </span>
+                  <span class="card-itens-valores texto_direita_card" id="usuarioCelular"></span>
+                </p>
+                <p><span class="card-itens-pg">Logradouro: </span>
+                  <span class="card-itens-valores tooltip-init texto_direita_card" id="end-logradouro"
+                    data-tooltip="."></span>
+                </p>
+                <p><span class="card-itens-pg">Número: </span>
+                  <span class="card-itens-valores texto_direita_card" id="end-num"></span>
+                </p>
+                <p><span class="card-itens-pg">Complemento: </span>
+                  <span class="card-itens-valores texto_direita_card" id="end-complemento"></span>
+                </p>
+                <p><span class="card-itens-pg">Bairro: </span>
+                  <span class="card-itens-valores texto_direita_card" id="end-bairro"></span>
+                </p>
+                <p><span class="card-itens-pg">Cidade: </span>
+                  <span class="card-itens-valores texto_direita_card" id="end-cidade"></span>
+                </p>
+                <p><span class="card-itens-pg">País</span>
+                  <span class="card-itens-valores texto_direita_card" id="end-pais"></span>
+                </p>
+              </div>
+            </div>
+          </li>
+          <li class="accordion-item">
+            <a href="#" class="item-content item-link">
+              <div class="item-inner">
+                <div class="item-title">Saldo Disponível</div>
+              </div>
+            </a>
+            <div class="accordion-item-content ">
+              <div class="block">
+                <ul>
+                  <li>
+                    <div class="item-content">
+                      <div class="item-inner">
+                        <div class="item-title" style="Font-size: 0.9rem;">Saldo Disponível:</div>
+                        <div class="item-after"><span id='saldo_inicial' style="Font-size: 1rem;"
+                            class="badge vermelhoBG"></span>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="item-content">
+                      <div class="item-inner">
+                        <div class="item-title" style="Font-size: 0.9rem;">Pendente<br> (Boleto em Aberto):</div>
+                        <div class="item-after"><span id='saldo_agu_get' style="Font-size: 1rem;"
+                            class="badge color-gray"></span>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                  <li id='carrinhoCompraSaldo' style="margin-top: 8px; margin-bottom: 4px;">
+                    <button id='btn_colocar_saldo'
+                      class="col button button-card button-raised button-round botao_cor_2 pulse_infinite">
+                      Comprar Saldo
+                    </button>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div><!-- FIM TITULAR -->
+
+    <!-- CARRINHO DE COMPRAS DE TITULOS (utilizado para CREDITO E SALDO)-->
+    <div id="card_compra_titulos" class="card block-strong inset block-pg-metodo">
+      <div class="block-title titulo-card-pagamento">Dados da Compra</div>
+      <div class="card-content card-content-padding" style="padding-top: 4px;padding-bottom: 4px">
+        <p><span class="card-itens-pg" eda-text="pages.carrinho.quantidadeTitulos">Quantidade de Títulos: </span>
+          <span class="card-itens-valores" id="qtdTitulos"></span>
+        </p>
+        <p id='p_valorUnitario' style="display: none;">
+          <span class="card-itens-pg">Valor unitário: </span>
+          <span class="card-itens-valores" id="valorUnitario"></span>
+        </p>
+        <p><span class="card-itens-pg">Valor Total: </span>
+          <span class="card-itens-valores" id="valorTotal"></span>
+        </p>
+        <p><span class="card-itens-pg">Título(s): </span>
+          <span class="card-itens-valores" style="font-size: 0.8rem !important;margin-top: 2px;"
+            id="numsTitulos"></span>
+        </p>
+        <p id="p_titulo_compra_aleatorio"
+          style="margin-top: 2px; text-align: left; text-align: center;padding-top: 4px;padding-bottom: 2px;">
+          Caso deseje escolher o título,<br>
+          <a href="/selecionarcap/" idp="" id="link_seleciona_compra_aleatorio" name="alterar_carrinhoLink"
+            style="font-weight: bold; color:#db1921"> clique aqui</a>
+        </p>
+        <div id="S1_numsTitulosSelecionados" class="list accordion-list accordion-endereco" style="display: none;">
+          <ul>
+            <li id='S1_li_accordion_box' class="accordion-item"><a href="#" class="item-content item-link">
+                <div class="item-inner">
+                  <div id='S1_TituloItens' class="item-title">Sorteio 1</div>
+                </div>
+              </a>
+              <div class="accordion-item-content ">
+                <div class="block" style="padding-left: 0px;padding-right: 0px">
+                  <div id='S1_titulosCarrinho1' class="row no-gap">
+                    <div id="col-0" class="col col-grid-carrinho-titulo">
+                      <span eda-text="pages.carrinho.numTitulo">Núm.Título</span>
+                    </div>
+                    <div id="col-1" class="col col-grid-carrinho-titulo">Núm.Sorte.1</div>
+                  </div>
+                  <div id='S1_titulosCarrinho2' class="row no-gap">
+                    <div id="col-0" class="col col-grid-carrinho-titulo">
+                      <span eda-text="pages.carrinho.numTitulo">Núm.Título</span>
+                    </div>
+                    <div id="col-1" class="col col-grid-carrinho-titulo">Núm.Sorte.1</div>
+                    <div id="col-2" class="col col-grid-carrinho-titulo">Núm.Sorte.2</div>
+                  </div>
+                  <div id='S1_titulosCarrinho3' class="row no-gap">
+                    <div id="col-0" class="col col-grid-carrinho-titulo">
+                      <span eda-text="pages.carrinho.numTitulo">Núm.Título</span>
+                    </div>
+                    <div id="col-1" class="col col-grid-carrinho-titulo">Núm.Sorte.1</div>
+                    <div id="col-2" class="col col-grid-carrinho-titulo">Núm.Sorte.2</div>
+                    <div id="col-3" class="col col-grid-carrinho-titulo">Núm.Sorte.3</div>
+                  </div>
+                  <p id="S1_p_alterar_carrinho" style="margin-top: 2px; text-align: left; text-align: center;
+                  padding-top: 4px;padding-bottom: 2px;">Adicionar ou alterar itens,
+                    <a id='S1_p_alterar_carrinhoLink' name='alterar_carrinhoLink' href="" link=""
+                      style="font-weight: bold; color:#db1921">
+                      clique aqui
+                    </a>
+                  </p>
+                </div>
+              </div>
+
+            </li>
+          </ul>
+        </div>
+
+        <div id="S2_numsTitulosSelecionados" class="list accordion-list accordion-endereco" style="display: none;">
+          <ul>
+            <li id='S2_li_accordion_box' class="accordion-item"><a href="#" class="item-content item-link">
+                <div class="item-inner">
+                  <div id='S2_TituloItens' class="item-title">Sorteio 2</div>
+                </div>
+              </a>
+              <div class="accordion-item-content ">
+                <div class="block" style="padding-left: 0px;padding-right: 0px">
+                  <div id='S2_titulosCarrinho1' class="row no-gap">
+                    <div id="col-0" class="col col-grid-carrinho-titulo">
+                      <span eda-text="pages.carrinho.numTitulo">Núm.Título</span>
+                    </div>
+                    <div id="col-1" class="col col-grid-carrinho-titulo">Núm.Sorte.1</div>
+                  </div>
+                  <div id='S2_titulosCarrinho2' class="row no-gap">
+                    <div id="col-0" class="col col-grid-carrinho-titulo">
+                      <span eda-text="pages.carrinho.numTitulo">Núm.Título</span>
+                    </div>
+                    <div id="col-1" class="col col-grid-carrinho-titulo">Núm.Sorte.1</div>
+                    <div id="col-2" class="col col-grid-carrinho-titulo">Núm.Sorte.2</div>
+                  </div>
+                  <div id='S2_titulosCarrinho3' class="row no-gap">
+                    <div id="col-0" class="col col-grid-carrinho-titulo">
+                      <span eda-text="pages.carrinho.numTitulo">Núm.Título</span>
+                    </div>
+                    <div id="col-1" class="col col-grid-carrinho-titulo">Núm.Sorte.1</div>
+                    <div id="col-2" class="col col-grid-carrinho-titulo">Núm.Sorte.2</div>
+                    <div id="col-3" class="col col-grid-carrinho-titulo">Núm.Sorte.3</div>
+                  </div>
+                  <p id="S2_p_alterar_carrinho" style="margin-top: 2px; text-align: left; text-align: center;
+                  padding-top: 4px;padding-bottom: 2px;">Adicionar ou alterar itens,
+                    <a id='S2_p_alterar_carrinhoLink' name='alterar_carrinhoLink' href="" link=""
+                      style="font-weight: bold; color:#db1921">
+                      clique aqui
+                    </a>
+                  </p>
+                </div>
+              </div>
+
+            </li>
+          </ul>
+        </div>
+
+        <div id="S3_numsTitulosSelecionados" class="list accordion-list accordion-endereco" style="display: none;">
+          <ul>
+            <li id='S3_li_accordion_box' class="accordion-item"><a href="#" class="item-content item-link">
+                <div class="item-inner">
+                  <div id='S3_TituloItens' class="item-title">Sorteio 3</div>
+                </div>
+              </a>
+              <div class="accordion-item-content ">
+                <div class="block" style="padding-left: 0px;padding-right: 0px">
+                  <div id='S3_titulosCarrinho1' class="row no-gap">
+                    <div id="col-0" class="col col-grid-carrinho-titulo">
+                      <span eda-text="pages.carrinho.numTitulo">Núm.Título</span>
+                    </div>
+                    <div id="col-1" class="col col-grid-carrinho-titulo">Núm.Sorte.1</div>
+                  </div>
+                  <div id='S3_titulosCarrinho2' class="row no-gap">
+                    <div id="col-0" class="col col-grid-carrinho-titulo">
+                      <span eda-text="pages.carrinho.numTitulo">Núm.Título</span>
+                    </div>
+                    <div id="col-1" class="col col-grid-carrinho-titulo">Núm.Sorte.1</div>
+                    <div id="col-2" class="col col-grid-carrinho-titulo">Núm.Sorte.2</div>
+                  </div>
+                  <div id='S3_titulosCarrinho3' class="row no-gap">
+                    <div id="col-0" class="col col-grid-carrinho-titulo">
+                      <span eda-text="pages.carrinho.numTitulo">Núm.Título</span>
+                    </div>
+                    <div id="col-1" class="col col-grid-carrinho-titulo">Núm.Sorte.1</div>
+                    <div id="col-2" class="col col-grid-carrinho-titulo">Núm.Sorte.2</div>
+                    <div id="col-3" class="col col-grid-carrinho-titulo">Núm.Sorte.3</div>
+                  </div>
+
+                  <p id="S3_p_alterar_carrinho" style="margin-top: 2px; text-align: left; text-align: center;
+                  padding-top: 4px;padding-bottom: 2px;">Adicionar ou alterar itens,
+                    <a id='S3_p_alterar_carrinhoLink' name='alterar_carrinhoLink' href="" link=""
+                      style="font-weight: bold; color:#db1921">
+                      clique aqui
+                    </a>
+                  </p>
+                </div>
+              </div>
+
+            </li>
+          </ul>
+        </div>
+
+      </div>
+    </div> <!-- FIM CARRINHO DE COMPRAS (utilizado CREDITO E SALDO)-->
+
+    <!-- CONCORDAR TERMOS DE CONTRATO -->
+    <!--TESTE-->
+    <div id="block-TermosContato" class="card block-strong inset block-pg-metodo"
+      style="padding-bottom: 10px;display: none;">
+      <div class="block-title titulo-card-pagamento">Condições Gerais</div>
+      <div id='termoContrato_titulos' class="row tabCarrinhoTitulo no-gap" style="display: -webkit-box;">
+        <div id='S1_termoContrato_titulo' name='termoContrato_titulo' item='1' class="col tabCarrinhoItemAtivo"
+          style="display: none;">SORTEIO 1</div>
+        <div id='S2_termoContrato_titulo' name='termoContrato_titulo' item='2' class="col tabCarrinhoItemInativo"
+          style="display: none;">SORTEIO 2</div>
+        <div id='S3_termoContrato_titulo' name='termoContrato_titulo' item='3' class="col tabCarrinhoItemInativo"
+          style="display: none;">SORTEIO 3</div>
+      </div>
+      <div id='divTermoContratoConteudo' class="row tabCarrinhoConteudo" style="text-align: center; display: block;">
+
+        <div id='S1_termoContrato_block' class="block" style="padding: 8px; display: none;">
+          <p id='S1_termoContrato_texto' style="text-align: justify; font-size: 10px;">
+            <span id='S1_carrinho_html_condicoes_comprar'></span>
+            <span id='S1_item_condicoesGeraisCapitalizadora'>
+              <span id='S1_link_condicoesGeraisCapitalizadora' style="font-weight: bold; color: #23458b !important;"
+                idp="" name="popUpCondicoes">
+                <span eda-showHide="pages.carrinho.condicoesGeraisshowHide">
+                  <span eda-text="pages.carrinho.condicoesGerais"></span>
+                  <span id='S1_carrinho_processosusep'></span>
+                </span>
+              </span>
+            </span>
+          </p>
+        </div>
+
+        <div id='S2_termoContrato_block' class="block" style="padding: 8px; display: none;">
+          <p id='S2_termoContrato_texto' style="text-align: justify; font-size: 10px;">
+            <span id='S2_carrinho_html_condicoes_comprar'></span>
+            <span id='S2_item_condicoesGeraisCapitalizadora'>
+              <span id='S2_link_condicoesGeraisCapitalizadora' style="font-weight: bold; color: #23458b !important;"
+                idp="" name="popUpCondicoes">
+                <span eda-text="pages.carrinho.condicoesGerais"></span>
+                <span id='S2_carrinho_processosusep'></span>
+              </span>
+            </span>
+          </p>
+        </div>
+
+        <div id='S3_termoContrato_block' class="block" style="padding: 8px; display: none;">
+          <p id='S3_termoContrato_texto' style="text-align: justify; font-size: 10px;">
+            <span id='S3_carrinho_html_condicoes_comprar'></span>
+            <span id='S3_item_condicoesGeraisCapitalizadora'>
+              <span id='S3_link_condicoesGeraisCapitalizadora' style="font-weight: bold; color: #23458b !important;"
+                idp="" name="popUpCondicoes">
+                <span eda-text="pages.carrinho.condicoesGerais"></span>
+                <span id='S3_carrinho_processosusep'></span>
+              </span>
+            </span>
+          </p>
+        </div>
+
+        <div id='aleatorio_termoContrato_block' class="block" style="padding: 8px; display: none;">
+          <p id='aleatorio_termoContrato_texto' style="text-align: justify; font-size: 10px;">
+            <span id='aleatorio_carrinho_html_condicoes_comprar'></span>
+            <span id='aleatorio_item_condicoesGeraisCapitalizadora'>
+              <span id='aleatorio_link_condicoesGeraisCapitalizadora'
+                style="font-weight: bold; color: #23458b !important;" idp="" name="popUpCondicoes">
+                <span eda-text="pages.carrinho.condicoesGerais"></span>
+                <span id='aleatorio_carrinho_processosusep'></span>
+              </span>
+            </span>
+          </p>
+        </div>
+      </div>
+      <div class="row"
+        style="justify-content: left;margin-bottom: 10px;margin-left: 8px;margin-top: 8px; align-items: center;">
+        <label class="checkbox botao_cor_1 checkbox_form" style="font-size: 0.9rem;">
+          <input id="CadcheckTermosContato" type="checkbox" checked>
+          <i class="icon-checkbox icon_checkbox_form checkbox_bg"></i>
+        </label><span style="margin-left: 15px;">Sim, concordo com as condições acima</span>
+      </div>
+    </div> <!-- FIM TESTE -->
+
+    <!--FORMA DE PAGAMENTO completa-->
+    <div id="div_todos_pagamentos">
+      <!--FORMA DE PAGAMENTO -->
+      <div id="forma-pagamento" class="card block-strong inset block-pg-metodo">
+        <div class="block-title titulo-card-pagamento">forma de pagamento</div>
+        <div class="list" style="padding-top: 0px; padding-bottom: 0px; margin:0; width: 100% !important;">
+          <p class="segmented segmented-round">
+            <button id="form_pg_cartao_credito" value="credit" name="form_metodo_pg"
+              class="button button-round button-outline valor-boleto" style="margin-right: 0 !important;"><span
+                class="botoes-pagamento">Crédito</span>
+            </button>
+            <button id="form_pg_cartao_saldo" value="saldo" name="form_metodo_pg"
+              class="button button-round button-outline valor-boleto" style="margin-right: 0 !important;">
+              <span class="botoes-pagamento">Saldo</span>
+            </button>
+            <button id="form_pg_pix" value="pix" name="form_metodo_pg"
+              class="button button-round button-outline valor-boleto" style="margin-left: 0 !important;">
+              <span class="botoes-pagamento">PIX</span>
+            </button>
+          </p>
+        </div>
+      </div><!-- FIM FORMA DE PAGAMENTO -->
+
+      <!-- BLOCK CARTAO DE CREDITO/DEBITO -->
+      <div id="block_credito_debito" class="card block-strong inset block-pg-cartao"
+        style=" padding-bottom: 20px !important;">
+        <div id='title_credito' class="block-title titulo-card-pagamento">Cartão de Crédito</div>
+        <div id='title_debito' class="block-title titulo-card-pagamento" style='display:none;'>
+          Cartão de Débito
+        </div>
+
+        <!-- PAGAMENTO COM CARTAO DE CREDITO COFRE-->
+        <div id='cartao_credito_cofre' class="card card-outline"
+          style="background-color: #dadada50; text-align: center;padding-bottom: 4px;">
+          <div class="block-title titulo-card-pagamento">Cartões Cadastrados</div>
+          <input type="hidden" id='bandeiraCofre' name="bandeiraCofre" value="" />
+          <div class="card-content card-content-padding">
+            <div class="list inline-labels no-hairlines-md">
+              <ul>
+                <li class="item-content item-input">
+                  <div class="item-media">
+                    <i id="remover_cartao_cofre" style="font-size: 1.7em !important; vertical-align: text-bottom;"
+                      class="mdi mdi-credit-card-remove vermelhoColor pulse_infinite">
+                    </i>
+                  </div>
+                  <div class="item-inner">
+                    <div class="item-input-wrap input-dropdown-wrap">
+                      <select id='lista_cartoes_cofre' placeholder="Escolha o cartão cadastrado">
+                      </select>
+                    </div>
+                  </div>
+                </li>
+                <li id='li_credito_cofre_codseguranca'>
+                  <div class="row no-gap">
+                    <div class="col-70">
+                      <span style="vertical-align: middle;height: 100%;">Cód. Segurança:</span>
+                    </div>
+                    <div class="col-30">
+                      <input id="cartaoCodSegCofre" type="tel" name="cartaoCodSegCofre" placeholder="****"
+                        style="-webkit-text-security:disc" autocomplete="off">
+                    </div>
+                  </div>
+                </li>
+                <li class="li_cartao_cofre_pg" id='li_cartao_cofre_pg'
+                  style="padding-bottom: 0px !important; padding-top: 6px !important; margin-bottom: 0px !important; ">
+                  <p class="" style="margin-bottom: 0px !important;padding-bottom: 2px !important;">
+                    <button id='btn_pagar_cartao_cofre' name='btn_pagar_cartao'
+                      class="col button button-card button-raised button-round botao_cor_1 pulse_infinite">
+                      PAGAR CRÉDITO
+                    </button>
+                  </p>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <!-- PAGAMENTO COM NOVO CARTAO DE CREDITO -->
+        <div id='cartao_credito_novo_cartao'>
+          <!-- IMAGEM CARTAO DE CREDITO -->
+          <div class="imagem-cartao" style="padding-bottom: 8px;width: 100% !important;"></div>
+          <!-- FORM CARTAO DE CREDITO -->
+          <div class="list form-pg-cartao" id="form-pg">
+            <ul>
+              <li class="li-cartao-pg">
+
+                <div class="row">
+                  <div class="col-70">
+                    <div class="item-content item-input">
+                      <div class="item-inner item-inner-pg-cartao">
+                        <div class="item-title item-label item-label-pg-cartao">Número do cartão</div>
+                        <div class="item-input-wrap">
+                          <input id="cartaoNumero" type="tel" name="cartaoNumero"
+                            placeholder="DIGITE O NÚMERO DO CARTÃO" autocomplete="off"
+                            style="font-size: 0.9em !important;">
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-30">
+                    <div class="item-content item-input" style="padding-left: 8px;">
+                      <div class="item-inner item-inner-pg-cartao">
+                        <div class="item-title item-label item-label-pg-cartao">Bandeira</div>
+                        <div class="item-input-wrap">
+                          <select id="cartaoBandeira" name="cartaoBandeira" style="font-size: 0.9em !important;">
+                            <option value=""></option>
+                            <option value="amex">Amex</option>
+                            <option value="diners">Diners</option>
+                            <option value="elo">Elo</option>
+                            <option value="hipercard">Hipercard</option>
+                            <option value="mastercard">Mastercard</option>
+                            <option value="visa">Visa</option>
+                          </select>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li class="li-cartao-pg">
+                <div class="item-content item-input">
+                  <div class="item-inner item-inner-pg-cartao">
+                    <div class="item-title item-label item-label-pg-cartao">Nome impresso no cartão</div>
+                    <div class="item-input-wrap">
+                      <input id="cartaoNome" type="text" name="cartaoNome" placeholder="Ex. JOÃO DA SILVA"
+                        autocomplete="off" style="text-transform: uppercase;" style="font-size: 0.9em !important;">
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li class="li-cartao-pg">
+                <div class="item-content item-input">
+                  <div class="item-inner item-inner-pg-cartao">
+                    <div class="item-title item-label item-label-pg-cartao">Validade</div>
+                    <div class="item-input-wrap">
+                      <input id="cartaoValidade" type="tel" name="cartaoValidade" placeholder="**/****"
+                        autocomplete="off" size="9" style="font-size: 0.9em !important;">
+                    </div>
+                  </div>
+                  <div class="item-inner item-inner-pg-cartao">
+                    <div class="item-title item-label item-label-pg-cartao">Cód.Segurança</div>
+                    <div class="item-input-wrap">
+                      <input id="cartaoCodSeg" type="tel" name="cartaoCodSeg" placeholder="****"
+                        style="-webkit-text-security:disc" autocomplete="off" style="font-size: 0.9em !important;">
+                    </div>
+                  </div>
+                </div>
+              </li>
+
+              <li id='li_salvar_cartao' class="li-cartao-pg">
+                <div class="item-content">
+                  <div class="item-inner item-inner-pg-cartao">
+                    <div class="item-title item-label-pg-cartao">SALVAR CARTÃO</div>
+                    <div class="item-after">
+                      <label class="toggle toggle-init">
+                        <input id='salvar_cartao' type="checkbox" name="toggle" value="yes" checked><i
+                          class="toggle-icon"></i>
+                      </label>
+                    </div>
+                  </div>
+                </div>
+              </li>
+
+              <li class="li-cartao-pg" id='li_bt_credito'
+                style="padding-bottom: 0px !important; padding-top: 6px !important; margin-bottom: 0px !important; ">
+                <p class="" style="margin-bottom: 0px !important;padding-bottom: 2px !important;">
+                  <button id='btn-pagar-cartao' name='btn_pagar_cartao'
+                    class="col button button-card button-raised button-round botao_cor_1 pulse_infinite">
+                    PAGAR CRÉDITO
+                  </button>
+                </p>
+              </li>
+            </ul>
+          </div> <!-- FORM CARTAO DE CREDITO -->
+        </div>
+
+      </div> <!-- FIM BLOCK  CARTAO DE CREDITO -->
+
+      <!-- BLOCK UTILIZAR SALDO -->
+      <div id="block-saldo" class="card block-strong inset block-pg-cartao"
+        style="margin-bottom: 11px !important; padding-bottom: 20px !important;">
+        <div class="block-title titulo-card-pagamento" eda-text="pages.carrinho.saldoCarteira"></div>
+        <div class="list">
+          <ul>
+            <li>
+              <div class="item-content">
+                <div class="item-inner">
+                  <div class="item-title" style="Font-size: 0.9rem;">Saldo Disponível:</div>
+                  <div class="item-after"><span id='saldo_usuario' style="Font-size: 1rem;"
+                      class="badge vermelhoBG"></span>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li>
+              <div class="item-content">
+                <div class="item-inner">
+                  <div class="item-title" style="Font-size: 0.9rem;">Pendente<br> (Boleto em Aberto):</div>
+                  <div class="item-after"><span id='valor_boleto_pendente' style="Font-size: 1rem;"
+                      class="badge color-gray"></span>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li>
+              <div class="item-content">
+                <div class="item-inner" id='atualizacao_saldo'>
+                  <div class="item-title" style="Font-size: 0.8rem;">Saldo Atualizado em:</div>
+                  <div class="item-after">
+                    <span id='saldo_atualizado_em' style="Font-size: 0.8rem;"></span>
+                  </div>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <div style="text-align: center !important;">Obs.: O saldo pode demorar até 72 horas após pagamento do
+          boleto, conforme compensação bancária.
+        </div>
+        <div class="row"> </br></div>
+        <p class="" style="padding-bottom: 4px;">
+          <!-- class row row-botao-pg -->
+          <button id='btn-pagar-saldo'
+            class="col button button-card button-raised button-round botao_cor_1 pulse_infinite">
+            PAGAR COM SALDO
+          </button>
+        </p>
+      </div> <!-- FIM UTILIZAR SALDO -->
+
+      <!-- BLOCK UTILIZAR PIX -->
+      <div id="block-pix" class="card block-strong inset block-pg-cartao"
+        style="margin-bottom: 11px !important; padding-bottom: 20px !important;">
+        <div class="block-title titulo-card-pagamento">Pix Copia e Cola</div>
+
+        <div id='div_confirma_pg_pix' class="list">
+          <div class="card-content card-content-padding" style="padding-top: 4px;padding-bottom: 4px">
+            <p style="text-align: center;margin-top: 4px;">
+              <span style="font-size: 0.8rem !important;">
+                Ao confirmar o pagamento via PIX, será gerado um QR Code.
+                Você poderá ler através do seu aplicativo do banco ou utilizar o Pix Copia e Cola.
+                Basta copiar o código referente ao QR Code e informar esse código dentro da área Pix do aplicativo
+                do
+                seu banco, em “Pix Copia e Cola”.
+              </span><br>
+              <span style="font-size: 0.8rem !important;color: #db1921 !important; font-weight: bold !important;"
+                eda-text="pages.carrinho.pixMensagem"> </span>
+            </p>
+            <p class="" style="margin-bottom: 0px !important;padding-bottom: 2px !important;">
+              <button id='btn_pagar_pix'
+                class="col button button-card button-raised button-round botao_cor_1 pulse_infinite">
+                PAGAR COM PIX
+              </button>
+            </p>
+          </div>
+        </div>
+        <div id='div_pix_pagamento' class="list list-pix" style="display: none;">
+          <center>
+            <div class="gerencianetpix-loader"></div>
+            <p>Gerando o QRCode...</p>
+          </center>
+          <center style="display:none;">
+
+            <div class='titulo-card-pagamento' style="text-align: center !important;">
+              Pedido Cadastrado!<br>Aguardando pagamento.
+            </div>
+            <p class="" style="padding-bottom: 4px;">
+              <button id='btn_pix_copiar' style="animation: pulse_infinite 1s infinite;"
+                class="col button button-big button-fill button-round bg-azul botao-pg">
+                Clique aqui para copiar
+              </button>
+            </p>
+            <div class="gerencianetpix-label">
+              <input type="text" id="BRCode" name="BRCode" readonly />
+              <button>
+                <img id='img_pix_copiar' src="img/carrinho/pix.svg" style="animation: pulse_infinite 1s infinite;" />
+              </button>
+            </div>
+
+            <img id="QRCode" width="250" height="250" />
+
+            <!-- <div style="text-align: center !important;">Clique no ícone/botão para copiar.</div> -->
+          </center>
+          <center style="display:none;">
+          </center>
+        </div>
+        <!-- HELP PIX -->
+        <div class="card card-outline"
+          style="background-color: #dadada50;text-align: center;padding-bottom: 4px;border-color:#db1921;">
+          <div class="block-title titulo-card-pagamento">Precisa de Ajuda?</div>
+          <div class="card-content card-content-padding">
+            <span style="font-size: 0.9rem;text-align: center;">
+              Tire aqui suas dúvidas de como realizar o pagamento com PIX
+            </span>
+            <p>
+              <button id='btn_pagar_pix_duvidas' class="col button button-card button-raised button-round botao_cor_3">
+                Dúvidas? Clique aqui
+              </button>
+            </p>
+          </div>
+        </div>
+
+      </div> <!-- FIM UTILIZAR PIX -->
+
+      <!-- TERMO DE CESSAO -->
+      <div id="block-TermoCessao" class="card block-strong inset block-pg-metodo"
+        eda-showHide="pages.carrinho.cardCessaoResgate">
+        <div class="row">
+          <div id='unico_termo' class="col-80" style="margin-left: 16px; display: none;">
+            <span eda-text="pages.carrinho.msgContribuicao"></span>
+            <br>
+            Valor do resgate cedido: <span id='unico_valor_resgate'></span>
+            (<span id='unico_valor_quota_resgate'></span>%) a cada título de <span
+              id='unico_valor_titulo_unitario'></span>
+            adquirido.
+          </div>
+
+          <div id='multi_termo' class="col-80" style="margin-left: 16px;display: none;">
+            <span eda-text="pages.carrinho.msgContribuicao"></span>
+            <span id="S1_termo" style="display: none;">
+              <br>
+              <span id="S1_termoDataSorteio" class='termoDataSorteio'></span>
+              Valor do resgate cedido: <span id='S1_valor_resgate'></span>
+              (<span id='S1_valor_quota_resgate'></span>%) a cada título de <span id='S1_valor_titulo_unitario'></span>
+              adquirido.
+            </span>
+            <span id="S2_termo" style="display: none;">
+              <br>
+              <span id="S2_termoDataSorteio" class='termoDataSorteio'></span>
+              Valor do resgate cedido: <span id='S2_valor_resgate'></span>
+              (<span id='S2_valor_quota_resgate'></span>%) a cada título de <span id='S2_valor_titulo_unitario'></span>
+              adquirido.
+            </span>
+            <span id="S3_termo" style="display: none;">
+              <br>
+              <span id="S3_termoDataSorteio" class='termoDataSorteio'></span>
+              Valor do resgate cedido: <span id='S2_valor_resgate'></span>
+              (<span id='S3_valor_quota_resgate'></span>%) a cada título de <span id='S3_valor_titulo_unitario'></span>
+              adquirido.
+            </span>
+          </div>
+          <div class="col-20" style="margin-top: auto;margin-bottom: auto;">
+            <label class="toggle toggle-init toggle_tr">
+              <input id="toggle_TermoResgate" type="checkbox" checked>
+              <i class="toggle-icon"></i>
+            </label>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- linha divisória p layout -->
+    <div class="row"> </br></div>
+  </div>
+
+</div><!-- FIM page -->
